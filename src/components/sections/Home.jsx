@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { GradientBackground } from "../ReactiveBackground";
 
 export const Home = () => {
-    const [catImage, setCatImage] = useState("/rcat.gif"); // Initialize state
+    const [catImage, setCatImage] = useState("/public/rcat.gif"); // Initialize state
 
     return (
         <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
@@ -29,8 +29,8 @@ export const Home = () => {
                             src={catImage} 
                             alt="Angie's Cat" 
                             className="w-112 h-92 transition-all duration-300"
-                            onMouseEnter={() => setCatImage("/rcatb.gif")} 
-                            onMouseLeave={() => setCatImage("/rcat.gif")} 
+                            onMouseEnter={() => setCatImage("/public/rcatb.gif")} 
+                            onMouseLeave={() => setCatImage("/public/rcat.gif")} 
                         />
                     </div>
                 </div>
