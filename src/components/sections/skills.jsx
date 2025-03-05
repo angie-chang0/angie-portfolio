@@ -42,7 +42,7 @@ export const About = () => {
     "Unreal Engine",
     "Slack"
   ];
-    const [cImage, cCatImage] = useState("/k2.png"); 
+    const [cImage, cCatImage] = useState("/angie-portfolio/k2.png"); 
 
   return (
     <section
@@ -100,8 +100,8 @@ export const About = () => {
               src={cImage} 
               alt="AnieCat" 
               className="w-45 h-42 transition-all duration-300"
-              onMouseEnter={() => cCatImage("/k2b.png")} 
-              onMouseLeave={() => cCatImage("/k2.png")} 
+              onMouseEnter={() => cCatImage("/angie-portfolio/k2b.png")} 
+              onMouseLeave={() => cCatImage("/angie-portfolio/k2.png")} 
             />
           </div>
         {/* <span className="absolute right-[-30px] bottom-[-100px] text-[300px] text-blue-800/20 blur-md select-none">✽</span> */}

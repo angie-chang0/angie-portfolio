@@ -3,14 +3,17 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { GradientBackground } from "../ReactiveBackground";
 
 export const Home = () => {
-    const [catImage, setCatImage] = useState("/rcat.gif"); // Initialize state
+    const [catImage, setCatImage] = useState("/angie-portfolio/rcat.gif"); // Initialize state
 
     return (
         <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
+            {/* Animated Gradient Background */}
             <GradientBackground />
 
+            {/* Foreground Content */}
             <RevealOnScroll>
                 <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl px-6">
+                    {/* Text Content */}
                     <div className="text-center md:text-left flex-1">
                         <h1 className="text-5xl md:text-4xl mb-6 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent leading-tight">
                             
@@ -23,14 +26,14 @@ export const Home = () => {
                         </p>
                     </div>
 
-
+                    {/* Image on the right */}
                     <div className="flex-1 flex justify-end">
                         <img 
-                            src={`${import.meta.env.BASE_URL}rcat.gif`}
-                             alt="Angie's Cat"
+                            src={catImage} 
+                            alt="Angie's Cat" 
                             className="w-112 h-92 transition-all duration-300"
-                            onMouseEnter={() => setCatImage(`${import.meta.env.BASE_URL}rcatb.gif`)} 
-                            onMouseLeave={() => setCatImage(`${import.meta.env.BASE_URL}rcat.gif`)}
+                            onMouseEnter={() => setCatImage("/angie-portfolio/rcatb.gif")} // Change image on hover
+                            onMouseLeave={() => setCatImage("/angie-portfolio/rcat.gif")} // Revert back
                         />
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
 
 export const Contact = () => {
-  const [kImage, kCatImage] = useState("/k.png"); // Initialize state
-  const [fImage, fCatImage] = useState("/k3.png"); 
+  const [kImage, kCatImage] = useState("/angie-portfolio/k.png"); // Initialize state
+  const [fImage, fCatImage] = useState("/angie-portfolio/k3.png"); 
 
   const [formData, setFormData] = useState({
     name: "",
@@ -109,8 +109,8 @@ export const Contact = () => {
               src={fImage} 
               alt="AnieCat" 
               className="w-65 h-80 transition-all duration-300"
-              onMouseEnter={() => fCatImage("/k3b.png")} 
-              onMouseLeave={() => fCatImage("/k3.png")} 
+              onMouseEnter={() => fCatImage("/angie-portfolio/k3b.png")} 
+              onMouseLeave={() => fCatImage("/angie-portfolio/k3.png")} 
             />
           </div>
 

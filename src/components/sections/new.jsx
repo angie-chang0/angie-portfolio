@@ -11,9 +11,9 @@ export const New = () => {
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start relative">
           <div className="relative w-60 h-60 md:w-100 md:h-100 mb-12 md:mb-0 md:mr-10 flex flex-col items-center">
             <div className="relative w-full h-full">
-              <img src="/gray.png" alt="Gray Box" className="absolute top-4 left-4 w-full h-full object-cover rounded-lg opacity-80" />
-              <img src="/gray.png" alt="Gray Box" className="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-90" />
-              <img src="/angie.png" alt="Angie" className="relative w-full h-full object-cover rounded-lg shadow-lg" />
+              <img src="/angie-portfolio/gray.png" alt="Gray Box" className="absolute top-4 left-4 w-full h-full object-cover rounded-lg opacity-80" />
+              <img src="/angie-portfolio/gray.png" alt="Gray Box" className="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-90" />
+              <img src="/angie-portfolio/angie.png" alt="Angie" className="relative w-full h-full object-cover rounded-lg shadow-lg" />
             </div>
             <div className="text-left md:text-left max-w-lg">
             <h2 className="text-3xl  mt-8 mb-4 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
@@ -51,9 +51,9 @@ export const New = () => {
             <div className="relative w-full h-full mt-8">
 
             <div className="absolute top-4 left-4 flex">
-            <img src="/car.png" alt="Layered Image 1" className="w-50 h-50 y-2 object-cover rounded-lg shadow-lg opacity-90" />
-            <img src="/11.jpg" alt="Layered Image 2" className="w-50 h-50 object-cover rounded-lg shadow-lg opacity-90 -ml-6 mt-2" />
-            <img src="/5.jpg" alt="Layered Image 3" className="w-50 h-50 object-cover rounded-lg shadow-lg opacity-95 -ml-6 mt-4" />
+            <img src="/angie-portfolio/car.png" alt="Layered Image 1" className="w-50 h-50 y-2 object-cover rounded-lg shadow-lg opacity-90" />
+            <img src="/angie-portfolio/11.jpg" alt="Layered Image 2" className="w-50 h-50 object-cover rounded-lg shadow-lg opacity-90 -ml-6 mt-2" />
+            <img src="/angie-portfolio/5.jpg" alt="Layered Image 3" className="w-50 h-50 object-cover rounded-lg shadow-lg opacity-95 -ml-6 mt-4" />
             </div>
             </div>
           </div>

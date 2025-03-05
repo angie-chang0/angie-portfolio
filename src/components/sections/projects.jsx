@@ -15,7 +15,7 @@ export const Projects = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition">
-            <img src="/cmufinals.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+            <img src="/angie-portfolio/cmufinals.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-bold mb-2 text-black"> CMU Finals Planner</h3>
               <p className="text-black mb-4">
                 Scalable PDF scraper that takes CMU course finals and allows for easy adding to google calendar using 
@@ -38,7 +38,7 @@ export const Projects = () => {
               </div>
             </div>
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all">
-            <img src="/activeiq.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+            <img src="/angie-portfolio/activeiq.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-bold mb-2 text-black">Active IQ Database</h3>
               <p className="text-black mb-4">
                 Designed interface of Active IQ database with real-time changes in share ownship during 
@@ -61,7 +61,7 @@ export const Projects = () => {
               </div>
             </div>
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all">
-              <img src="/gray.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <img src="/angie-portfolio/gray.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-bold mb-2 text-black">Freelance Web Development</h3>
               <p className="text-black mb-4">
                 meow..? wip
@@ -83,7 +83,7 @@ export const Projects = () => {
               </div>
             </div>
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all">
-            <img src="/gray.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+            <img src="/angie-portfolio/gray.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-bold mb-2 text-black">Computer System Assorted Projects</h3>
               <p className="text-black mb-4">
                 meow!!! wip
