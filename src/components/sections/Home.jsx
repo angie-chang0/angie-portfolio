@@ -32,8 +32,13 @@ export const Home = () => {
                             src={catImage} 
                             alt="Angie's Cat" 
                             className="w-112 h-92 transition-all duration-300"
+<<<<<<< HEAD
                             onMouseEnter={() => setCatImage("/angie-portfolio/rcatb.gif")} // Change image on hover
                             onMouseLeave={() => setCatImage("/angie-portfolio/rcat.gif")} // Revert back
+=======
+                            onMouseEnter={() => setCatImage(/angie-portfolio/rcatb.gif`)} 
+                            onMouseLeave={() => setCatImage(/angie-portfolio/rcat.gif`)}
+>>>>>>> 09a6059d535725834b46a3ba2645c70233993eaf
                         />
                     </div>
                 </div>
