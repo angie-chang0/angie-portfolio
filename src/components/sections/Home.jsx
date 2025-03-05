@@ -26,11 +26,11 @@ export const Home = () => {
 
                     <div className="flex-1 flex justify-end">
                         <img 
-                            src={catImage} 
-                            alt="Angie's Cat" 
+                            src={`${import.meta.env.BASE_URL}rcat.gif`}
+                             alt="Angie's Cat"
                             className="w-112 h-92 transition-all duration-300"
-                            onMouseEnter={() => setCatImage("/rcatb.gif")} 
-                            onMouseLeave={() => setCatImage("/rcat.gif")} 
+                            onMouseEnter={() => setCatImage(`${import.meta.env.BASE_URL}rcatb.gif`)} 
+                            onMouseLeave={() => setCatImage(`${import.meta.env.BASE_URL}rcat.gif`)}
                         />
                     </div>
                 </div>
