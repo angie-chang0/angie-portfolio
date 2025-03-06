@@ -41,8 +41,8 @@ export const Contact = () => {
               src={kImage} 
               alt="AngieCat" 
               className="w-52 h-32transition-all duration-300"
-              onMouseEnter={() => kCatImage("/kb.png")} 
-              onMouseLeave={() => kCatImage("/k.png")} 
+              onMouseEnter={() => kCatImage("/angie-portfolio/kb.png")} 
+              onMouseLeave={() => kCatImage("/angie-portfolio/k.png")} 
             />
           </div>
 
