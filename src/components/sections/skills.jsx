@@ -58,8 +58,7 @@ export const About = () => {
 
           <div className="rounded-xl p-8 py-10 border-black border hover:-translate-y-1 transition-all">
             <p className="text-black mb-6">
-              Passionate developer and artist with the skills to 
-              do both skillfully
+              Ordered based on relevance and proficiency
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
