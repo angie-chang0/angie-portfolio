@@ -37,7 +37,7 @@ export const Projects = ({ setShowProject }) => {
 
             {/* Active IQ Database */}
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
-              <img src="/angie-portfolio/activeiq.png" alt="Active IQ Database" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <img src="/angie-portfolio/nq.png" alt="Active IQ Database" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">Active IQ Database</h3>
               <p className="text-black mb-4">
                 Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation 
