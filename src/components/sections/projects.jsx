@@ -68,7 +68,9 @@ export const Projects = ({ setShowProject }) => {
               <img src="/angie-portfolio/recipiehub.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">RecipieHub</h3>
               <p className="text-black mb-4">
-                meow..? wip
+                A WebApp that allows users to upload a link or picture to a recpie from anywhere on the web, and use 
+                our LLM to gather the recipie ingredients and intructions to save all in one place. Keeps track of user
+                groceries and reccomends recipies so that food does not go to waste. 
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["LLM/Machine Learning","User Stories", "Agile/Scrum workflow","React + Vite", "NodeJS", "Docker"].map((tech) => (
@@ -89,7 +91,10 @@ export const Projects = ({ setShowProject }) => {
               <img src="/angie-portfolio/malloc.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">Computer Systems Assorted Projects</h3>
               <p className="text-black mb-4">
-                meow!!! wip
+              Cache: Built a cache sim C that utilized a LRU policy to simulate the L3 cache. Malloc: Implemented a 
+              memory manager that dynamically allocates heap memory through use of segregated lists and unbounded arrays.
+              Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and
+              allows for I/O redirection.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"].map((tech, key) => (
