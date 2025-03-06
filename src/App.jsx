@@ -7,36 +7,45 @@ import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
 import { About } from './components/sections/skills';
 import { Projects } from './components/sections/Projects';
-import { Project1 } from './components/sections/project1'; // projOne component
+import { Project1 } from './components/sections/project1';
+import { Project2 } from './components/sections/project2';
+import { Project3 } from './components/sections/project3';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [showProject, setShowProject] = useState(false); // Controls visibility of projOne
+    const [currentProject, setCurrentProject] = useState(null); 
 
-    return (
-        <>
-            {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "} 
-            <div 
-                className={`min-h-screen transition-opacity duration-700 ${
-                  isLoaded ? "opacity-100" : "opacity-0"} 
-                  bg-black text-gray-100`}
-            >
-                {!showProject ? (
+    const renderProject = () => {
+        switch (currentProject) {
+            case "project1":
+                return <Project1 setShowProject={setCurrentProject} />;
+            case "project2":
+                return <Project2 setShowProject={setCurrentProject} />;
+            case "project3":
+                return <Project3 setShowProject={setCurrentProject} />;
+            default:
+                return (
                     <>
                         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                         <Home />
-                        <Projects setShowProject={setShowProject} />
+                        <Projects setShowProject={setCurrentProject} />
                         <About />
                         <New />
                         <Contact />
                     </>
-                ) : (
-                    <Project1 setShowProject={setShowProject} />
-                )}
+                );
+        }
+    };
+
+    return (
+        <>
+            {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+            <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
+                {renderProject()}
             </div>
         </>
     );

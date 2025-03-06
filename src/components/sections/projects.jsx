@@ -15,7 +15,7 @@ export const Projects = ({ setShowProject }) => {
             
             {/* CMU Finals Planner */}
             <div className="p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
-              <img src="/angie-portfolio/cmufinals.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <img src="/angie-portfolio/cmufinals.png" alt="CMU Finals Planner" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">CMU Finals Planner</h3>
               <p className="text-black mb-4">
                 Scalable PDF scraper that takes CMU course finals and smoothly adds final to Google Calendar 
@@ -37,7 +37,7 @@ export const Projects = ({ setShowProject }) => {
 
             {/* Active IQ Database */}
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
-              <img src="/angie-portfolio/activeiq.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <img src="/angie-portfolio/activeiq.png" alt="Active IQ Database" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">Active IQ Database</h3>
               <p className="text-black mb-4">
                 Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation 
@@ -52,10 +52,10 @@ export const Projects = ({ setShowProject }) => {
                     {tech}
                   </span>
                 ))}
-              </div>
+                              </div>
               <div className="flex justify-between items-center">
                 <button 
-                  onClick={() => setShowProject(true)} 
+                  onClick={() => setShowProject("project1")} 
                   className="text-black hover:text-black/80 transition-colors my-4"
                 >
                   View Project →
@@ -63,14 +63,14 @@ export const Projects = ({ setShowProject }) => {
               </div>
             </div>
         
-            {/* Freelance Web Development */}
+            {/* RecipeHub */}
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
-              <img src="/angie-portfolio/recipiehub.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
-              <h3 className="font-bold text-xl text-black font-serif italic">RecipieHub</h3>
+              <img src="/angie-portfolio/recipiehub.png" alt="RecipeHub" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <h3 className="font-bold text-xl text-black font-serif italic">RecipeHub</h3>
               <p className="text-black mb-4">
-                A WebApp that allows users to upload a link or picture to a recpie from anywhere on the web, and use 
-                our LLM to gather the recipie ingredients and intructions to save all in one place. Keeps track of user
-                groceries and reccomends recipies so that food does not go to waste. 
+                A WebApp that allows users to upload a link or picture to a recipe from anywhere on the web, and use 
+                our LLM to gather the recipe ingredients and instructions to save all in one place. Keeps track of user
+                groceries and recommends recipes so that food does not go to waste. 
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["LLM/Machine Learning","User Stories", "Agile/Scrum workflow","React + Vite", "NodeJS", "Docker"].map((tech) => (
@@ -80,21 +80,24 @@ export const Projects = ({ setShowProject }) => {
                 ))}
               </div>
               <div className="flex justify-between items-center">
-                <a href="#" className="text-black hover:text-black/80 transition-colors my-4">
+                <button 
+                  onClick={() => setShowProject("project2")} 
+                  className="text-black hover:text-black/80 transition-colors my-4"
+                >
                   View Project →
-                </a>
+                </button>
               </div>
             </div>
 
             {/* Computer Systems Projects */}
             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
-              <img src="/angie-portfolio/malloc.png" alt="Project Preview" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <img src="/angie-portfolio/malloc.png" alt="Computer Systems Projects" className="w-full h-60 object-cover rounded-lg mb-4" />
               <h3 className="font-bold text-xl text-black font-serif italic">Computer Systems Assorted Projects</h3>
               <p className="text-black mb-4">
-              Cache: Built a cache sim C that utilized a LRU policy to simulate the L3 cache. Malloc: Implemented a 
-              memory manager that dynamically allocates heap memory through use of segregated lists and unbounded arrays.
-              Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and
-              allows for I/O redirection.
+                Cache: Built a cache sim in C that utilized an LRU policy to simulate the L3 cache. 
+                Malloc: Implemented a memory manager that dynamically allocates heap memory through the use of segregated lists and unbounded arrays.
+                Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and
+                allows for I/O redirection.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"].map((tech, key) => (
@@ -104,9 +107,12 @@ export const Projects = ({ setShowProject }) => {
                 ))}
               </div>
               <div className="flex justify-between items-center">
-                <a href="#" className="text-black hover:text-black/80 transition-colors my-4">
+                <button 
+                  onClick={() => setShowProject("project3")} 
+                  className="text-black hover:text-black/80 transition-colors my-4"
+                >
                   View Project →
-                </a>
+                </button>
               </div>
             </div>
 

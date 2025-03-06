@@ -59,7 +59,7 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 className="w-full bg-black/5 border border-black/10 rounded px-4 py-3 text-black transition focus:outline-none focus:border-black focus:bg-black/10"
-                placeholder="Name..."
+                placeholder="name..."
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
@@ -88,7 +88,7 @@ export const Contact = () => {
                 rows={5}
                 value={formData.message}
                 className="w-full bg-black/5 border border-black/10 rounded px-4 py-3 text-black transition focus:outline-none focus:border-black focus:bg-black/10"
-                placeholder="Your Message..."
+                placeholder="your message..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
