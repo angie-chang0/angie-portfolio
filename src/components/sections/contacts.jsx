@@ -5,22 +5,22 @@ import emailjs from "emailjs-com";
 export const Contact = () => {
   const [kImage, kCatImage] = useState("/angie-portfolio/k.png"); // Initialize state
   const [fImage, fCatImage] = useState("/angie-portfolio/k3.png"); 
-
+  const VITE_SERVICE_ID = "service_vmh40gb";
+  const VITE_TEMPLATE_ID = "template_tpal5db";
+  const VITE_PUBLIC_KEY = "r4SU9sVaZS2P6UDvE";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
+        VITE_SERVICE_ID,
+        VITE_TEMPLATE_ID,
         e.target,
-        import.meta.env.VITE_PUBLIC_KEY
+        VITE_PUBLIC_KEY
       )
       .then((result) => {
         alert("Message Sent!");
@@ -65,7 +65,6 @@ export const Contact = () => {
                 }
               />
             </div>
-
             <div className="relative">
               <input
                 type="email"
