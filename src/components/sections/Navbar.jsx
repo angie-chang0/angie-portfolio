@@ -7,7 +7,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   return (
     <nav className="fixed top-0 left-0 w-full z-40 bg-[rgba(216,218,215, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+      <div className="flex justify-between items-center h-16">
         <a href="#home" className="font-serif italic font-bold text-xl text-black flex items-center space-x-3">
           {/* <img src="/kitty.png" alt="cat" className="w-15 h-15 object-cover" /> */}
           <span>✮⋆˙angie</span>
