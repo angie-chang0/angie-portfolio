@@ -21,11 +21,29 @@ function App() {
     const renderProject = () => {
         switch (currentProject) {
             case "project1":
-                return <Project1 setShowProject={setCurrentProject} />;
+                return (
+                  <>
+                      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                      <Project1 setShowProject={setCurrentProject} />
+                  </>
+                      );
             case "project2":
-                return <Project2 setShowProject={setCurrentProject} />;
+              return (
+                <>
+                    <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                    <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                    <Project4 setShowProject={setCurrentProject} />
+                </>
+                    );
             case "project3":
-                return <Project3 setShowProject={setCurrentProject} />;
+              return (
+                <>
+                    <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                    <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                    <Project3 setShowProject={setCurrentProject} />
+                </>
+                    );
             default:
                 return (
                     <>

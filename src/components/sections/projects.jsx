@@ -73,7 +73,7 @@ export const Projects = ({ setShowProject }) => {
                 groceries and recommends recipes so that food does not go to waste. 
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["LLM/Machine Learning","User Stories", "Agile/Scrum workflow","React + Vite", "NodeJS", "Docker"].map((tech) => (
+                {["LLM/Machine Learning","User Stories", "Agile/Scrum workflow","React + Vite", "NodeJS","PostgreSQL", "Docker"].map((tech) => (
                   <span key={tech} className="bg-black text-white py-1 px-3 rounded-full text-sm hover:bg-black/80 transition">
                     {tech}
                   </span>
@@ -98,6 +98,54 @@ export const Projects = ({ setShowProject }) => {
                 Malloc: Implemented a memory manager that dynamically allocates heap memory through the use of segregated lists and unbounded arrays.
                 Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and
                 allows for I/O redirection.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"].map((tech, key) => (
+                  <span key={key} className="bg-black text-white py-1 px-3 rounded-full text-sm hover:bg-black/80 transition">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex justify-between items-center">
+                <button 
+                  onClick={() => setShowProject("project3")} 
+                  className="text-black hover:text-black/80 transition-colors my-4"
+                >
+                  View Project →
+                </button>
+              </div>
+            </div>
+
+             {/* Reacipt */}
+             <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
+              <img src="/angie-portfolio/gray.png" alt="RecipeHub" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <h3 className="font-bold text-xl text-black font-serif italic">what does it cost?</h3>
+              <p className="text-black mb-4">
+                A creative code project. Coming soon!
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["LLM/Machine Learning","JS","P5.js", "Javascript", "public installation", "react"].map((tech) => (
+                  <span key={tech} className="bg-black text-white py-1 px-3 rounded-full text-sm hover:bg-black/80 transition">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex justify-between items-center">
+                <button 
+                  onClick={() => setShowProject("project2")} 
+                  className="text-black hover:text-black/80 transition-colors my-4"
+                >
+                  View Project →
+                </button>
+              </div>
+            </div>
+
+            {/* Computer Systems Projects */}
+            <div className="glass p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition">
+              <img src="/angie-portfolio/gray.png" alt="Computer Systems Projects" className="w-full h-60 object-cover rounded-lg mb-4" />
+              <h3 className="font-bold text-xl text-black font-serif italic">Freelance Web Developer</h3>
+              <p className="text-black mb-4">
+                coming soon! 
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"].map((tech, key) => (

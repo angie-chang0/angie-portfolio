@@ -10,6 +10,7 @@ html, body {
     padding: 0;
     background: #d8d7d7; /* Base Background Color */
     overflow-x: hidden;
+    width: 100%;
 
 em {
   font-family: 'IBM Plex Serif', serif;
@@ -19,15 +20,14 @@ em {
 
 
 :root {
-  --color-bg1: rgb(18, 188, 188);    
-  --color-bg2: rgb(179, 122, 205); 
-  --color1: 38, 11, 145;        
-  --color2: 120, 50, 60;          
-  --color3: 200, 150, 160;    
-  --color4: 250, 220, 210;      
-  --color5: 180, 230, 230;        
-  --color-interactive: 200, 255, 224;
-
+  --color-bg1: rgb(216, 218, 215);    
+  --color-bg2: rgb(216, 218, 215); 
+  --color1: 82, 106, 147        
+  --color2: 204, 220, 240;          
+  --color3: 180, 200, 230;    
+  --color4: 150, 180, 220;      
+  --color5: 82, 106, 147;        
+  --color-interactive: 119, 150, 237;
 
   --circle-size: 80%;
   --blending: hard-light;
