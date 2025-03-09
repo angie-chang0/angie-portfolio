@@ -9,8 +9,8 @@ html, body {
     margin: 0;
     padding: 0;
     background: #d8d7d7; /* Base Background Color */
-    overflow-x: hidden;
-    width: 100%;
+    /* overflow-x: hidden; */
+    /* width: 100%; */
 
 em {
   font-family: 'IBM Plex Serif', serif;
