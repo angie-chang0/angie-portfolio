@@ -2,27 +2,25 @@ import { useEffect, useRef } from "react";
 
 export const GradientBackground = () => {
     const interactiveRef = useRef(null);
-    const curPos = useRef({ x: 0, y: 0 });
-    const targetPos = useRef({ x: 0, y: 0 });
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
 
     useEffect(() => {
         const interBubble = interactiveRef.current;
         if (!interBubble) return;
 
         const move = () => {
-            curPos.current.x += (targetPos.current.x - curPos.current.x) / 10;
-            curPos.current.y += (targetPos.current.y - curPos.current.y) / 10;
-
-            if (interBubble) {
-                interBubble.style.transform = `translate3d(${Math.round(curPos.current.x)}px, ${Math.round(curPos.current.y)}px, 0)`;
-            }
-
+            curX += (tgX - curX) / 20;
+            curY += (tgY - curY) / 20;
+            interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
             requestAnimationFrame(move);
         };
 
         const handleMouseMove = (event) => {
-            targetPos.current.x = event.clientX;
-            targetPos.current.y = event.clientY;
+            tgX = event.clientX;
+            tgY = event.clientY;
         };
 
         window.addEventListener("mousemove", handleMouseMove);
