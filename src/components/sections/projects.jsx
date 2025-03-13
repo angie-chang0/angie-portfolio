@@ -29,7 +29,7 @@ export const Projects = ({ setShowProject }) => {
                 ))}
               </div>
               <div className="flex justify-between items-center">
-                <a href="https://cmufinalsplanner.github.io/" className="text-black hover:text-black/80 transition-colors my-4">
+                <a href="https://angie-chang0.github.io/cmufinalsplanner/" className="text-black hover:text-black/80 transition-colors my-4">
                   View Project →
                 </a>
               </div>
