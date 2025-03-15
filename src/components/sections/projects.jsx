@@ -55,7 +55,7 @@ export const Projects = ({ setShowProject }) => {
                               </div>
               <div className="flex justify-between items-center">
                 <button 
-                  // onClick={() => setShowProject("project1")} 
+                  onClick={() => setShowProject("project1")} 
                   className="text-black hover:text-black/80 transition-colors my-4"
                 >
                   View Project →

@@ -22,7 +22,7 @@ export const Home = () => {
                         {/* Header Text & Bar */}
                         <div className="relative w-full flex flex-col items-center md:items-start">
                             <p className="text-black text-sm sm:text-md">
-                            <span className="font-semibold">Currently →</span>looking for work!
+                            <span className="font-semibold">Currently →</span> looking for work!
                             </p>
                             <div className="w-3/4 md:w-full h-0.5 bg-black mt-1"></div> {/* Bar under text */}
                             {/* <p className="text-blue-700 text-sm mt-1 md:absolute md:-top-5 md:left-[170px]">
