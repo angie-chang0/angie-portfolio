@@ -37,7 +37,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, setShowProject }) => {
               About
             </a>
             <a
-              href="#contact"
+              href="#contacts"
               onClick={() => setShowProject(null)}
               className="text-gray-900 hover:text-black transition-colors"
             >
