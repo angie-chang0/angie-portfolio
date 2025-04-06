@@ -260,12 +260,13 @@ export const Project1 = ({ setShowProject }) => {
 
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-          <button 
-            onClick={() => setShowProject(false)} 
-            className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
-          >
-            Go Back
-          </button>
+        <a
+          href="#projects"
+          onClick={() => setShowProject(false)}
+          className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
+        >
+          Go Back
+        </a>
         </div>
       </div>
     </div>

@@ -48,8 +48,9 @@ export const New = () => {
               </p>
               <p>
                 My experience spans AI, web development, database management, and user experience design. 
-                I am particularly passionate about backend development, computer systems, and building scalable 
-                products that drive sustainable business impact.
+                I am particularly passionate about building scalable 
+                products that drive sustainable business impact, Using code as a creative medium, and experimenting
+                with new technologies. 
               </p>
               <p>
                 Driven by curiosity, empathy, and creativity, I'm looking to join a team committed to making a 

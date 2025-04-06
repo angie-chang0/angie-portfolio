@@ -10,6 +10,10 @@ import { Projects } from './components/sections/projects.jsx';
 import { Project1 } from './components/sections/project1';
 import { Project2 } from './components/sections/project2';
 import { Project3 } from './components/sections/project3';
+import { Project4 } from './components/sections/project4';
+import { Project6 } from './components/sections/project6';
+import { Project7 } from './components/sections/project7';
+import { Project5 } from './components/sections/project5';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
 
@@ -61,6 +65,54 @@ function App() {
             />
             <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <Project3 setShowProject={setCurrentProject} />
+          </>
+        );
+      case "project4":
+        return (
+          <>
+            <Navbar 
+              menuOpen={menuOpen} 
+              setMenuOpen={setMenuOpen} 
+              setShowProject={setCurrentProject} 
+            />
+            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <Project4 setShowProject={setCurrentProject} />
+          </>
+        );
+      case "project5":
+        return (
+          <>
+            <Navbar 
+              menuOpen={menuOpen} 
+              setMenuOpen={setMenuOpen} 
+              setShowProject={setCurrentProject} 
+            />
+            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <Project5 setShowProject={setCurrentProject} />
+          </>
+        );
+      case "project6":
+        return (
+          <>
+            <Navbar 
+              menuOpen={menuOpen} 
+              setMenuOpen={setMenuOpen} 
+              setShowProject={setCurrentProject} 
+            />
+            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <Project6 setShowProject={setCurrentProject} />
+          </>
+        );
+      case "project7":
+        return (
+          <>
+            <Navbar 
+              menuOpen={menuOpen} 
+              setMenuOpen={setMenuOpen} 
+              setShowProject={setCurrentProject} 
+            />
+            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <Project7 setShowProject={setCurrentProject} />
           </>
         );
       default:
