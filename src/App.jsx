@@ -14,6 +14,7 @@ import { Project4 } from './components/sections/project4';
 import { Project6 } from './components/sections/project6';
 import { Project7 } from './components/sections/project7';
 import { Project5 } from './components/sections/project5';
+import { Project8 } from './components/sections/project8';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
 
@@ -115,6 +116,18 @@ function App() {
             <Project7 setShowProject={setCurrentProject} />
           </>
         );
+        case "project8":
+          return (
+            <>
+              <Navbar 
+                menuOpen={menuOpen} 
+                setMenuOpen={setMenuOpen} 
+                setShowProject={setCurrentProject} 
+              />
+              <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+              <Project8 setShowProject={setCurrentProject} />
+            </>
+          );
       default:
         return (
           <>

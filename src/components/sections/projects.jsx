@@ -13,6 +13,15 @@ const projectsData = [
     buttonAction: "project5", // internal link => setShowProject("project5")
   },
   {
+    id: "infrecursive",
+    title: "infintely recursive tree",
+    description:
+        "Using priniples of recursion and perlin noise, I created 2 projects that generate infinitely. I created a tree that continues to grow forever, and a phyllotactic spiral that shrinks and contracts. ",
+    image: "/angie-portfolio/t2.png",
+    tags: ["Personal Project", "Generative Art", "Creative Coding", "P5.js", "JavaScript"],
+    buttonAction: "project8", 
+  },
+  {
     id: "interactiveenv",
     title: "TouchDesigner: Interactive Environment",
     description: "Using TouchDesigner, I created a physics simluator that allows a user to manipulate a water like substance. through the scope of this project, I created many smaller prototypes using compuer vision and motion capture. Take a peek! :)",
@@ -23,7 +32,7 @@ const projectsData = [
   {
     id: "depthMap",
     title: "LLM Depth Map + Machine Learning",
-    description: "contained in this project is mini projects that culminates in a final trained LLM created within COMFYUI that uses machine learning to detect the depth within a given image. Using this, I programmed a parallax effect within images for manipulation. ",
+    description: "Contained in this project is mini projects that culminates in a final trained LLM created within COMFYUI that uses machine learning to detect the depth within a given image. Using this, I programmed a parallax effect within images for manipulation. ",
     image: "/angie-portfolio/hand.png",
     tags: ["Personal Project","LLM/Machine Learning", "JS","Python", "ComfyUI", "Javascript", "public installation", "react"],
     link: "project7",
@@ -40,7 +49,7 @@ const projectsData = [
   {
     id: "clocks",
     title: "10 Clocks",
-    description: "clocks! clocks! In this creative project, I rapidly prototyped 10 clocks and redefined from traditional time-keeping. I implemented these clocks in P5.JS, and implemented several different algorithms to represent time passing.",
+    description: "Clocks! Clocks! In this creative project, I rapidly prototyped 10 clocks and redefined from traditional time-keeping. I implemented these clocks in P5.JS, and implemented several different algorithms to represent time passing.",
     image: "/angie-portfolio/c.png",
     tags: ["Personal Project", "Creative Coding", "P5.js", "JavaScript"],
     buttonAction: "project4",
