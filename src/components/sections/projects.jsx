@@ -13,6 +13,15 @@ const projectsData = [
     buttonAction: "project5", // internal link => setShowProject("project5")
   },
   {
+    id: "3d",
+    title: "Brooklyn Bridge: VR",
+    description:
+        "  This is a project I made for a competition. I used the Brooklyn Bridge as my main subject and created a VR experience that takes place on the bridge in the 1920s. I had to model the bridge, the trolleys, and the people. I also had to create a train station and a train. The video shows the experience in action.",
+    image: "/angie-portfolio/br.jpg",
+    tags: ["Personal Project", "3D Modelling", "VR/AR", "Unreal Engine", "Blueprints", "Oculus Go"],
+    buttonAction: "project9", // internal link => setShowProject("project5")
+  },
+  {
     id: "infrecursive",
     title: "infintely recursive tree",
     description:
