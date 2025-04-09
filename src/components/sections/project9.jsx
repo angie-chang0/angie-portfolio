@@ -36,7 +36,7 @@ export const Project9 = ({ setShowProject }) => {
               <source src="/angie-portfolio/BBVR.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
+          </div> 
           <p className="text-lg mb-6 max-w-6xl">
           Brooklyn Bridge VR is my first virtual reality experience. It is built in Unreal Engine, programmed entirely by Blueprints. Originally, it was supposed to be made for the Oculus Rift, but I found the Oculus Go more appropriate for this experience. I originally modeled the Brooklyn Bridge for a competition hosted by Mike Hermes, a prominent YouTube Autodesk Maya teacher. After the competition, I decided to build a VR experience that took place on the bridge in the 1920s. It had to have trolleys, trains, cars and people, and I was set on giving players that vintage experience. To figure out the type of traffic that went on the Brooklyn Bridge, I had to look through old archived footage of it. Additionally, I had to go to the MTA train museum to get reference images of the trains. After hours of countless, work I built an experience for the Oculus GO and the Rift. This video was filmed on the computer, using the same graphics of the Oculus Rift version. 
 	
