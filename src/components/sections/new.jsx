@@ -4,15 +4,15 @@ export const New = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center py-20 bg-[rgb(216,218,215)] px-4 sm:px-6"
+      className="relative min-h-screen flex items-center justify-center py-20 bg-[rgb(216,218,215)] px-4 sm:px-6 overflow-x-hidden"
     >
       <span className="hidden md:block absolute left-[-90px] top-1/3 text-[300px] text-blue-800/20 blur-md select-none">✭</span>
       
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start relative">
+        <div className="w-full max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start relative">
           
-          {/* Left Section (Image & Text) */}
-          <div className="relative w-full sm:w-60 h-auto sm:h-60 md:w-100 md:h-100 mb-12 md:mb-0 md:mr-10 flex flex-col items-center">
+          {/* Left Section (Image & Text) - Shows second on mobile, first on desktop */}
+          <div className="relative w-full sm:w-60 h-auto sm:h-60 md:w-100 md:h-100 mb-12 md:mb-0 md:mr-10 flex flex-col items-center order-2 md:order-1">
             <div className="relative w-full max-w-xs sm:max-w-none h-auto">
               <img src="/angie-portfolio/gray.png" alt="Gray Box" className="absolute top-4 left-4 w-full h-full object-cover rounded-lg opacity-80" />
               <img src="/angie-portfolio/gray.png" alt="Gray Box" className="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-90" />
@@ -34,8 +34,8 @@ export const New = () => {
             </div>
           </div>
 
-          {/* Right Section (Text & Layered Images) */}
-          <div className="text-center md:text-left max-w-lg">
+          {/* Right Section (Text & Layered Images) - Shows first on mobile, second on desktop */}
+          <div className="text-center md:text-left max-w-lg w-full order-1 md:order-2">
             <h2 className="text-3xl mb-4 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
               Hi, friend! 
             </h2>

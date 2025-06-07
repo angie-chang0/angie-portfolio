@@ -1,4 +1,14 @@
-export const Project1 = ({ setShowProject }) => {
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+export const Project1 = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="py-25 min-h-screen flex flex-col items-center justify-start bg-[rgb(216,218,215)] text-black p-10">
       <div className="max-w-6xl w-full">
@@ -38,7 +48,7 @@ export const Project1 = ({ setShowProject }) => {
               <p className="mb-4">
               ActiveIQ was designed to track complex changes in share ownership and 
               the underlying factors driving these shifts. More importantly, it was 
-              envisioned as a unified repository to consolidate the company’s data.
+              envisioned as a unified repository to consolidate the company's data.
                With legacy information previously scattered across multiple databases,
                 the goal was to centralize all historical and future proprietary data
                  on ActiveIQ.
@@ -134,7 +144,7 @@ export const Project1 = ({ setShowProject }) => {
               </p>
               <p className="mb-4">
               I carefully selected a clean, modern color palette aligned with InnisFree
-               M&A’s branding to create visual consistency. Additionally, I optimized 
+               M&A's branding to create visual consistency. Additionally, I optimized 
                navigation by replacing the outdated tree format with a card-based layout,
                 allowing for quick selection and streamlined access to critical data. 
                 My focus was on enhancing clarity and readability, ensuring that IR 
@@ -260,13 +270,12 @@ export const Project1 = ({ setShowProject }) => {
 
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>

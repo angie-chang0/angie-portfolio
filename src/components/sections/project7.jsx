@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export const Project7 = ({ setShowProject }) => {
+export const Project7 = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
       <div className="max-w-6xl w-full">
@@ -99,7 +108,7 @@ export const Project7 = ({ setShowProject }) => {
           Diffusion Models are the core AI algorithms used in popular image generation tools like Midjourney and DALL·E. To gain familiarity with this concept, I experimented with using custom generative p5.js graphics to "condition" (guide) a simple diffusion AI. I based my work off of Dino Diffusion, an ultra-minimal diffusion model created by Ollin Boer Bohan that generates a 512x512 botanical image.
           </p>
           <p className="mb-6 text-lg">
-          Using p5.js, I wrote a script that creates a black square with randomly generated circles. I was mostly trying to confuse the model and see how far I could push its interpretation, using negative space to create something unnatural and closely fitted to the square’s shape. I was also curious about pushing the model further by sketching a human face, to understand how constraint affects AI training, and how far visual abstraction could go while still being recognized.
+          Using p5.js, I wrote a script that creates a black square with randomly generated circles. I was mostly trying to confuse the model and see how far I could push its interpretation, using negative space to create something unnatural and closely fitted to the square's shape. I was also curious about pushing the model further by sketching a human face, to understand how constraint affects AI training, and how far visual abstraction could go while still being recognized.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -132,7 +141,7 @@ export const Project7 = ({ setShowProject }) => {
           </h2>
           <div>
             <p className="text-lg mb-6 max-w-6xl">
-            After understanding how to work with a pre-conditioned AI model, I took it further by using a broader model based on ComfyUI’s existing engines to create something unique. I plugged my p5.js sketches directly into the model, where the code would generate amorphous blobs of black, intersected with red "x" marks. I trained the model with the prompt of reinterpreting the p5.js sketch as a traditional Chinese painting of flowers.
+            After understanding how to work with a pre-conditioned AI model, I took it further by using a broader model based on ComfyUI's existing engines to create something unique. I plugged my p5.js sketches directly into the model, where the code would generate amorphous blobs of black, intersected with red "x" marks. I trained the model with the prompt of reinterpreting the p5.js sketch as a traditional Chinese painting of flowers.
             </p>
           </div>
           <div className="max-w-4xl h-auto shadow-lg rounded-lg mx-auto mb-6 space-y-6">
@@ -148,7 +157,7 @@ export const Project7 = ({ setShowProject }) => {
             />
           </div>
           <p className="text-lg mb-6 max-w-6xl">
-          Through this process, I learned how to "condition" a model more intentionally, guiding its interpretations toward specific aesthetics. I also developed a stronger familiarity with working within the constraints of ComfyUI and learned how to navigate its interface more effectively. The results were fascinating — I was able to see my generative sketches on the left and the AI’s reinterpretations on the right, giving me a direct comparison between code and creative machine output.
+          Through this process, I learned how to "condition" a model more intentionally, guiding its interpretations toward specific aesthetics. I also developed a stronger familiarity with working within the constraints of ComfyUI and learned how to navigate its interface more effectively. The results were fascinating — I was able to see my generative sketches on the left and the AI's reinterpretations on the right, giving me a direct comparison between code and creative machine output.
           </p>
         </div>
 
@@ -241,7 +250,7 @@ export const Project7 = ({ setShowProject }) => {
 
         {/* Full width text description */}
         <p className="text-lg mb-8">
-        As a use case for this depth map, I developed a p5.js sketch that reads the depth information and creates an interactive parallax effect. The depth levels of the image influence how elements move relative to the viewer’s cursor or device motion, creating a dynamic sense of depth and immersion. This final experiment tied together my learnings across AI conditioning, model training, and generative code — giving me a practical, visual demonstration of how abstract machine learning concepts can come to life in interactive design.
+        As a use case for this depth map, I developed a p5.js sketch that reads the depth information and creates an interactive parallax effect. The depth levels of the image influence how elements move relative to the viewer's cursor or device motion, creating a dynamic sense of depth and immersion. This final experiment tied together my learnings across AI conditioning, model training, and generative code — giving me a practical, visual demonstration of how abstract machine learning concepts can come to life in interactive design.
         </p>
 
         {/* 3 more images */}
@@ -276,13 +285,12 @@ export const Project7 = ({ setShowProject }) => {
         
         </div>
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>

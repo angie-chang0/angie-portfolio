@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export const Project9 = ({ setShowProject }) => {
+export const Project9 = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
       <div className="max-w-6xl w-full">
@@ -66,7 +75,7 @@ export const Project9 = ({ setShowProject }) => {
 
 
           <p className="text-lg mb-6 max-w-6xl">
-          An early rendering of the Brooklyn Bridge. I really like this one because of the train and all the detail in the structure. Another thing that I like is that you can tell that this was the Brooklyn Bridge from the 1920s, where as in the final shot you can’t tell. 
+          An early rendering of the Brooklyn Bridge. I really like this one because of the train and all the detail in the structure. Another thing that I like is that you can tell that this was the Brooklyn Bridge from the 1920s, where as in the final shot you can't tell. 
 
 	
           </p>
@@ -96,14 +105,14 @@ export const Project9 = ({ setShowProject }) => {
             Scrapped model and idea for the project. Initially, my idea for this competition was to build an interactable house, but ultimately I settled on the brooklyn bridge because I thought it would be more interesting. I ended up scrapping this model, but I still think it looks really nice. I used a lot of the same techniques that I used for the bridge, and I think it turned out really well. I also used a lot of the same textures that I used for the bridge, and I think they look really nice on this model as well. Rendered and built in Unreal Engine
           </p>
         </div>
+        {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>

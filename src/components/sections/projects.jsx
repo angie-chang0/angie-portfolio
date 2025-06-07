@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 // Sample data array with all your projects
@@ -108,9 +109,20 @@ const projectsData = [
   },
 ];
 
-export const Projects = ({ setShowProject }) => {
+export const Projects = () => {
   // State to hold multiple selected tags
   const [activeTags, setActiveTags] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+
+  // Fallback mechanism to ensure content is visible on mobile
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500); // Show content after 500ms as fallback
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Create a list of all unique tags for the dropdown
   const allTags = Array.from(new Set(projectsData.flatMap((project) => project.tags)));
@@ -157,7 +169,7 @@ export const Projects = ({ setShowProject }) => {
     if (project.link) {
       return (
         <button
-          onClick={() => setShowProject(project.link)}
+          onClick={() => navigate(`/${project.link}`)}
           className="text-black hover:text-black/80 transition-colors my-4"
         >
           View Project →
@@ -168,7 +180,7 @@ export const Projects = ({ setShowProject }) => {
     if (project.buttonAction) {
       return (
         <button
-          onClick={() => setShowProject(project.buttonAction)}
+          onClick={() => navigate(`/${project.buttonAction}`)}
           className="text-black hover:text-black/80 transition-colors my-4"
         >
           View Project →
@@ -182,18 +194,18 @@ export const Projects = ({ setShowProject }) => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center py-20 bg-[rgb(216,218,215)]"
+      className="min-h-screen flex flex-col items-center justify-center py-20 bg-[rgb(216,218,215)] overflow-x-hidden"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
+        <div className={`w-full max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 transition-opacity duration-300 ${isVisible ? 'opacity-100' : ''}`}>
           <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
             Featured Projects
           </h2>
 
           {/* Tag Filtering Controls */}
-          <div className="mb-6 flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="mb-6 flex flex-col md:flex-row items-center justify-center gap-4 px-2">
             {/* Display selected tags */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center">
               {activeTags.map((tag, index) => (
                 <div key={index} className="flex items-center bg-black text-white py-1 px-3 rounded-full text-sm">
                   {tag}
@@ -206,7 +218,7 @@ export const Projects = ({ setShowProject }) => {
             {/* Dropdown for tag selection */}
             <select
               onChange={handleTagSelect}
-              className="px-4 py-2 border border-black rounded text-black"
+              className="px-4 py-2 border border-black rounded text-black w-full max-w-xs"
             >
               <option value="">select tag(s)</option>
               {allTags.map((tag, index) => (
@@ -218,26 +230,26 @@ export const Projects = ({ setShowProject }) => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition"
+                className="p-4 sm:p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition w-full"
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-60 object-cover rounded-lg mb-4"
+                  className="w-full h-48 sm:h-60 object-cover rounded-lg mb-4"
                 />
-                <h3 className="font-bold text-xl text-black font-serif italic">
+                <h3 className="font-bold text-lg sm:text-xl text-black font-serif italic">
                   {project.title}
                 </h3>
-                <p className="text-black mb-4">{project.description}</p>
+                <p className="text-black mb-4 text-sm sm:text-base">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, key) => (
                     <span
                       key={key}
-                      className="bg-black text-white py-1 px-3 rounded-full text-sm hover:bg-black/80 transition"
+                      className="bg-black text-white py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-black/80 transition"
                     >
                       {tag}
                     </span>

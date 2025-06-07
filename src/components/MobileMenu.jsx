@@ -1,6 +1,27 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+    const navigate = useNavigate();
+
+    const handleHomeClick = () => {
+        setMenuOpen(false);
+        navigate('/');
+        window.scrollTo(0, 0);
+    };
+
+    const handleSectionClick = (sectionId) => {
+        setMenuOpen(false);
+        navigate('/');
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
+    };
+
     return ( 
         <div className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex justify-center items-center
                          transition-all duration-300 ease-in-out
@@ -18,24 +39,42 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 </button>
 
                 <nav className="flex flex-col space-y-6 text-white text-2xl">
-                    <a href="#home"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300">Home
-                    </a>
+                    <button
+                        onClick={handleHomeClick}
+                        className="hover:text-gray-300 text-left"
+                    >
+                        Home
+                    </button>
                         
-                    <a href="#about" 
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300">About
-                    </a>
+                    <button 
+                        onClick={() => handleSectionClick('about')}
+                        className="hover:text-gray-300 text-left"
+                    >
+                        About
+                    </button>
 
-                    <a href="#projects" 
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300">Projects
-                    </a>
+                    <button 
+                        onClick={() => handleSectionClick('projects')}
+                        className="hover:text-gray-300 text-left"
+                    >
+                        Projects
+                    </button>
 
-                    <a href="#contacts" 
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300">Contacts
+                    <button 
+                        onClick={() => handleSectionClick('contacts')}
+                        className="hover:text-gray-300 text-left"
+                    >
+                        Contact
+                    </button>
+
+                    <a
+                        href="https://drive.google.com/file/d/1CymbbP6uWLsR5ok8FVtQJ4RRbhsjXORM/view?usp=sharing"
+                        onClick={() => setMenuOpen(false)}
+                        className="hover:text-gray-300 text-left"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
                     </a>
                 </nav>
             </div>

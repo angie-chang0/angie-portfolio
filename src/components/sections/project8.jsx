@@ -1,9 +1,15 @@
 // Project5.js
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import p5 from "p5";
 
-export const Project8 = ({ setShowProject }) => {
+export const Project8 = () => {
+  const navigate = useNavigate();
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
@@ -79,14 +85,14 @@ export const Project8 = ({ setShowProject }) => {
             <p className="text-md"></p>
         </div>
 
+        {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>

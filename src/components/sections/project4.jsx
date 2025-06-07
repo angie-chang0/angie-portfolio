@@ -1,4 +1,14 @@
-export const Project4 = ({ setShowProject }) => {
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+export const Project4 = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Descriptions for each clock
   const clockDescriptions = [
     // "In this clock, numbers fall into the space, and after 60 seconds, they drop away and reset, same with minutes and hours",
@@ -56,13 +66,13 @@ export const Project4 = ({ setShowProject }) => {
           {/* Text Below */}
           <div className=" text-lg px-4 max-w-6xl">
             <p className="mb-4">
-              Attempts to mark time stretch back many thousands of years, with some of the earliest timekeeping technologies being gnomons, sundials, water clocks, and lunar calendars. Even today’s standard representation of time, with hours and minutes divided into 60 parts, is a legacy inherited from the ancient Sumerians, who used a sexagesimal counting system.
+              Attempts to mark time stretch back many thousands of years, with some of the earliest timekeeping technologies being gnomons, sundials, water clocks, and lunar calendars. Even today's standard representation of time, with hours and minutes divided into 60 parts, is a legacy inherited from the ancient Sumerians, who used a sexagesimal counting system.
             </p>
             <p className="mb-4">
               The history of timekeeping is a history driven by economic and militaristic desires for greater precision, accuracy, and synchronization. Every increase in our ability to precisely measure time has had a profound impact on science, agriculture, navigation, communications, and, as always, warcraft.
             </p>
             <p className="mb-4">
-              Despite the widespread adoption of technological standards, there are many other ways to understand time. Psychological time contracts and expands with attention; biological cycles affect our moods and behavior; ecological time is observed in species and resource dynamics; geological and astronomical rhythms can span millennia. In the twentieth century, Einstein’s theory of relativity further upended our understanding of time, showing that it does not flow in a constant way, but rather in relation to the position from which it is measured—a possibly surprising return to the significance of the observer.
+              Despite the widespread adoption of technological standards, there are many other ways to understand time. Psychological time contracts and expands with attention; biological cycles affect our moods and behavior; ecological time is observed in species and resource dynamics; geological and astronomical rhythms can span millennia. In the twentieth century, Einstein's theory of relativity further upended our understanding of time, showing that it does not flow in a constant way, but rather in relation to the position from which it is measured—a possibly surprising return to the significance of the observer.
             </p>
             <p className="mb-4">
               In this project, I attempted to widen my understanding and perception of time by rapidly prototyping 10 clocks that stray away from the usual definition of a "clock". I implemented these clocks in P5.JS (Javascript) and pushed myself both conceptually and technically. All visuals are hand coded with P5.JS Native.
@@ -143,13 +153,12 @@ export const Project4 = ({ setShowProject }) => {
     
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>

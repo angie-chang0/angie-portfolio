@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import { LoadingScreen } from './components/loadingScreen';
+import { ScrollToTop } from './components/ScrollToTop';
 import "./index.css";
 import { Navbar } from './components/sections/Navbar';
 import { MobileMenu } from './components/MobileMenu';
@@ -19,152 +21,97 @@ import { Project9 } from './components/sections/project9';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
 
-function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
-
-  // Scroll to top when a project is selected
-  useEffect(() => {
-    if (currentProject) {
-      window.scrollTo(0, 0);
-    }
-  }, [currentProject]);
-
-  const renderProject = () => {
-    switch (currentProject) {
-      case "project1":
+// Layout component for the main page
+const MainLayout = () => {
         return (
           <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project1 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project2":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project2 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project3":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project3 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project4":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project4 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project5":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project5 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project6":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project6 setShowProject={setCurrentProject} />
-          </>
-        );
-      case "project7":
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Project7 setShowProject={setCurrentProject} />
-          </>
-        );
-        case "project8":
-          return (
-            <>
-              <Navbar 
-                menuOpen={menuOpen} 
-                setMenuOpen={setMenuOpen} 
-                setShowProject={setCurrentProject} 
-              />
-              <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-              <Project8 setShowProject={setCurrentProject} />
-            </>
-          );
-          case "project9":
-            return (
-              <>
-                <Navbar 
-                  menuOpen={menuOpen} 
-                  setMenuOpen={setMenuOpen} 
-                  setShowProject={setCurrentProject} 
-                />
-                <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                <Project9 setShowProject={setCurrentProject} />
-              </>
-            );
-      default:
-        return (
-          <>
-            <Navbar 
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen} 
-              setShowProject={setCurrentProject} 
-            />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <Home />
-            <Projects setShowProject={setCurrentProject} />
+      <Projects />
             <About />
             <New />
             <Contact />
           </>
         );
-    }
-  };
+};
+
+// Layout component for project pages
+const ProjectLayout = ({ children }) => {
+  return (
+    <>
+      {children}
+    </>
+  );
+};
+
+function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
-        {renderProject()}
+      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100 overflow-x-hidden`}>
+        <ScrollToTop />
+        <Navbar 
+          menuOpen={menuOpen} 
+          setMenuOpen={setMenuOpen} 
+        />
+        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        
+        <Routes>
+          {/* Main page route */}
+          <Route path="/" element={<MainLayout />} />
+          
+          {/* Project routes */}
+          <Route path="/project1" element={
+            <ProjectLayout>
+              <Project1 />
+            </ProjectLayout>
+          } />
+          <Route path="/project2" element={
+            <ProjectLayout>
+              <Project2 />
+            </ProjectLayout>
+          } />
+          <Route path="/project3" element={
+            <ProjectLayout>
+              <Project3 />
+            </ProjectLayout>
+          } />
+          <Route path="/project4" element={
+            <ProjectLayout>
+              <Project4 />
+            </ProjectLayout>
+          } />
+          <Route path="/project5" element={
+            <ProjectLayout>
+              <Project5 />
+            </ProjectLayout>
+          } />
+          <Route path="/project6" element={
+            <ProjectLayout>
+              <Project6 />
+            </ProjectLayout>
+          } />
+          <Route path="/project7" element={
+            <ProjectLayout>
+              <Project7 />
+            </ProjectLayout>
+          } />
+          <Route path="/project8" element={
+            <ProjectLayout>
+              <Project8 />
+            </ProjectLayout>
+          } />
+          <Route path="/project9" element={
+            <ProjectLayout>
+              <Project9 />
+            </ProjectLayout>
+          } />
+          
+          {/* Catch all route - redirect to home */}
+          <Route path="*" element={<MainLayout />} />
+        </Routes>
       </div>
     </>
   );

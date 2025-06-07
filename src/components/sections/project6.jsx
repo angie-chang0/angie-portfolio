@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export const Project6 = ({ setShowProject }) => {
+export const Project6 = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
       <div className="max-w-6xl w-full">
@@ -355,15 +364,14 @@ export const Project6 = ({ setShowProject }) => {
 
         {/* ---------------- End of New Sections ---------------- */}
 
-        {/* Button Section */}
+        {/* Go Back Button */}
         <div className="flex justify-center mt-10">
-        <a
-          href="#projects"
-          onClick={() => setShowProject(false)}
+        <button
+          onClick={() => navigate('/')}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
-        </a>
+        </button>
         </div>
       </div>
     </div>
