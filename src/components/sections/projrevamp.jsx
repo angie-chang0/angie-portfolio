@@ -296,6 +296,7 @@ export const ProjRevamp = () => {
               padding: 0,
               background: '#e2e1df',
               zIndex: 2,
+              flexShrink: 0,
             }}
             className="projrevamp-sidebar"
           >
@@ -316,9 +317,8 @@ export const ProjRevamp = () => {
                 </span>
                 Projects
               </div>
-              <div style={{ fontSize: 15, marginBottom: 12 }}>human centered products.</div>
+              <div style={{ fontSize: 15, marginBottom: 12 }}>I create pixel perfect products, skillfully coded and aesthetically pleasing to look at. I hope to create products that are interesting, engaging, and useful. Featured projects are displayed first, and please click on each to learn more about them.</div>
               <div style={{ fontSize: 13, color: '#555', marginBottom: 18 }}>
-                philosophy when creating projects here. The most featured projects are displayed first, and please click on each to learn more about them.
               </div>
               <button
                 style={{
@@ -457,7 +457,7 @@ export const ProjRevamp = () => {
                 ].map(skill => (
                   <span key={skill} style={{ border: "1px solid #1A1A1A", borderRadius: 6, padding: "2px 14px", fontSize: 13, minHeight: 18, background: '#e2e1df', color: '#222', fontWeight: 500 }}>{skill}</span>
                 ))}
-              </div>
+                </div>
               {/* Methods */}
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, marginTop: 12 }}>Methods</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
@@ -466,7 +466,7 @@ export const ProjRevamp = () => {
                 ].map(method => (
                   <span key={method} style={{ border: "1px solid #1A1A1A", borderRadius: 6, padding: "2px 14px", fontSize: 13, minHeight: 18, background: '#e2e1df', color: '#222', fontWeight: 500 }}>{method}</span>
                 ))}
-              </div>
+                </div>
               {/* Tools */}
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, marginTop: 12 }}>Tools</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
@@ -475,7 +475,7 @@ export const ProjRevamp = () => {
                 ].map(tool => (
                   <span key={tool} style={{ border: "1px solid #1A1A1A", borderRadius: 6, padding: "2px 14px", fontSize: 13, minHeight: 18, background: '#e2e1df', color: '#222', fontWeight: 500 }}>{tool}</span>
                 ))}
-              </div>
+                </div>
             </div>
           </div>
           {/* Right Scrollable Project List */}
@@ -490,7 +490,7 @@ export const ProjRevamp = () => {
               boxSizing: "border-box",
               paddingLeft: 0,
               paddingRight: 0,
-              background: '#e2e1df',
+              background: 'transparent',
               zIndex: 2,
             }}
             className="projrevamp-project-list"
@@ -566,28 +566,28 @@ export const ProjRevamp = () => {
                         <span style={{ fontSize: 18, marginLeft: 2 }}>→</span>
                       </a>
                     ) : (
-                      <button
+                    <button
                         onClick={() => {
                           navigate(`/${proj.link || proj.buttonAction}`);
                           setTimeout(() => { window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); }, 0);
                         }}
-                        style={{
-                          fontFamily: "Inconsolata, monospace",
-                          fontSize: 15,
-                          background: "none",
+                      style={{
+                        fontFamily: "Inconsolata, monospace",
+                        fontSize: 15,
+                        background: "none",
                           border: "1.2px solid #222",
                           borderRadius: 18,
-                          color: "#222",
-                          cursor: "pointer",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 6,
-                          padding: "6px 16px",
-                        }}
-                      >
-                        see more
-                        <span style={{ fontSize: 18, marginLeft: 2 }}>→</span>
-                      </button>
+                        color: "#222",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
+                        padding: "6px 16px",
+                      }}
+                    >
+                      see more
+                      <span style={{ fontSize: 18, marginLeft: 2 }}>→</span>
+                    </button>
                     )}
                   </div>
                 </div>
