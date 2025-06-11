@@ -256,7 +256,8 @@ export const ProjRevamp = () => {
           alignItems: "stretch",
           padding: 0,
           position: "relative",
-          overflow: "hidden"
+          overflow: "hidden",
+          overflowX: "hidden",
         }}
       >
         <div style={{ position: 'absolute', zIndex: 0, top: 0, left: 0, width: '100%', height: '100%' }}>
@@ -273,8 +274,10 @@ export const ProjRevamp = () => {
             minHeight: 0,
             alignItems: "stretch",
             zIndex: 1,
-            position: "relative"
+            position: "relative",
+            flexDirection: 'row',
           }}
+          className="projrevamp-main-flex"
         >
           {/* Left Sidebar */}
           <div
@@ -291,7 +294,10 @@ export const ProjRevamp = () => {
               display: "flex",
               flexDirection: "column",
               padding: 0,
+              background: '#e2e1df',
+              zIndex: 2,
             }}
+            className="projrevamp-sidebar"
           >
             {/* Projects Section */}
             <div style={{ padding: "32px 24px 24px 24px", borderBottom: "1px solid #1A1A1A" }}>
@@ -477,11 +483,17 @@ export const ProjRevamp = () => {
             ref={rightColRef}
             style={{
               flex: 1,
+              minWidth: 0,
               height: "100vh",
               minHeight: 0,
               overflowY: "auto",
               boxSizing: "border-box",
+              paddingLeft: 0,
+              paddingRight: 0,
+              background: '#e2e1df',
+              zIndex: 2,
             }}
+            className="projrevamp-project-list"
           >
             {filteredProjects.map((proj, i) => (
               <div
@@ -586,6 +598,34 @@ export const ProjRevamp = () => {
       </section>
       {/* Thin black bar at the bottom of the section */}
       <div style={{ width: '100vw', height: 1, background: '#1A1A1A', margin: 0, padding: 0 }} />
+      <style>{`
+        @media (max-width: 900px) {
+          .projrevamp-main-flex {
+            flex-direction: column !important;
+            max-width: 100vw !important;
+            height: auto !important;
+          }
+          .projrevamp-sidebar {
+            width: 100vw !important;
+            min-width: 0 !important;
+            max-width: 100vw !important;
+            height: auto !important;
+            border-right: none !important;
+            border-bottom: 1px solid #1A1A1A !important;
+            position: relative !important;
+            z-index: 2;
+          }
+          .projrevamp-project-list {
+            width: 100vw !important;
+            min-width: 0 !important;
+            max-width: 100vw !important;
+            height: auto !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            z-index: 2;
+          }
+        }
+      `}</style>
     </>
   );
 }; 
