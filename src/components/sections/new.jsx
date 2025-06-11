@@ -4,7 +4,8 @@ export const New = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center py-20 bg-[rgb(216,218,215)] px-4 sm:px-6 overflow-x-hidden"
+      className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 overflow-x-hidden"
+      style={{ background: '#e2e1df' }}
     >
       <span className="hidden md:block absolute left-[-90px] top-1/3 text-[300px] text-blue-800/20 blur-md select-none">✭</span>
       

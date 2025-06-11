@@ -6,8 +6,7 @@ import { ScrollToTop } from './components/ScrollToTop';
 import "./index.css";
 import { Navbar } from './components/sections/Navbar';
 import { MobileMenu } from './components/MobileMenu';
-import { Home } from './components/sections/Home';
-import { About } from './components/sections/skills';
+import { Book } from './components/sections/Book';
 import { Projects } from './components/sections/projects.jsx';
 import { Project1 } from './components/sections/project1';
 import { Project2 } from './components/sections/project2';
@@ -18,20 +17,42 @@ import { Project7 } from './components/sections/project7';
 import { Project5 } from './components/sections/project5';
 import { Project8 } from './components/sections/project8';
 import { Project9 } from './components/sections/project9';
+import { Project10 } from './components/sections/project10';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
+import { ProjRevamp } from './components/sections/projrevamp';
+import { Abrev } from './components/sections/abrev';
 
 // Layout component for the main page
 const MainLayout = () => {
-        return (
-          <>
-            <Home />
-      <Projects />
-            <About />
-            <New />
-            <Contact />
-          </>
-        );
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  if (isMobile) {
+    return (
+      <>
+        <section id="home">
+          <New />
+        </section>
+        <Projects />
+        <Contact />
+      </>
+    );
+  }
+  return (
+    <>
+      <Book />
+      <ProjRevamp />
+      {/* <Abrev /> */}
+      {/* <Projects /> */}
+      {/* <About /> */}
+      <New />
+      <Contact />
+    </>
+  );
 };
 
 // Layout component for project pages
@@ -50,7 +71,7 @@ function App() {
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100 overflow-x-hidden`}>
+      <div className={`transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
         <ScrollToTop />
         <Navbar 
           menuOpen={menuOpen} 
@@ -106,6 +127,11 @@ function App() {
           <Route path="/project9" element={
             <ProjectLayout>
               <Project9 />
+            </ProjectLayout>
+          } />
+          <Route path="/project10" element={
+            <ProjectLayout>
+              <Project10 />
             </ProjectLayout>
           } />
           

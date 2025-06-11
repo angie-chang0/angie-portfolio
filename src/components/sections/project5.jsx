@@ -417,7 +417,7 @@ export const Project5 = () => {
   }, []);
 
   return (
-    <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
+    <div className="min-h-screen bg-[#e2e1df] text-black p-10 py-80">
       <div className="max-w-6xl w-full">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b-4 border-[rgb(129,148,201)]">
           <h1 className="bg-gradient-to-r from-[rgb(122,178,238)] to-[rgb(135,231,174)] bg-clip-text text-transparent leading-tight text-8xl font-bold mb-4 md:mb-0">
@@ -473,18 +473,28 @@ export const Project5 = () => {
       </h2>
         {/* Image Gallery */}
         <div className="grid grid-cols-3 gap-4 mt-6">
-            <img src="iso1.png" alt="Placeholder" className="w-full h-auto" />
-            <img src="iso2.png" alt="Placeholder" className="w-full h-auto" />
-            <img src="iso3.png" alt="Placeholder" className="w-full h-auto" />
-            <img src="iso4.png" alt="Placeholder" className="w-full h-auto" />
-            <img src="iso5.png" alt="Placeholder" className="w-full h-auto" />
-            <img src="iso6.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso1.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso2.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso3.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso4.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso5.png" alt="Placeholder" className="w-full h-auto" />
+            <img src="/angie-portfolio/iso6.png" alt="Placeholder" className="w-full h-auto" />
         </div>
 
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/angie-portfolio/');
+            setTimeout(() => {
+              const section = document.getElementById('projrevamp');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.scrollTo(0, 0);
+              }
+            }, 100);
+          }}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back

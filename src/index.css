@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300..700&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grape Nuts';
+  src: url('/Grape_Nuts/GrapeNuts-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Set the background color */
 html, body {
@@ -9,13 +22,36 @@ html, body {
     margin: 0;
     padding: 0;
     background: #d8d7d7; /* Base Background Color */
-    overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow: visible;
+}
 
 em {
   font-family: 'IBM Plex Serif', serif;
   font-style: italic;
 }
+
+/* Only html should control scrolling to prevent double scroll bars */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  overflow-x: hidden;
+  overflow-y: visible;
+  height: 100%;
+}
+
+/* Prevent any horizontal scrolling issues */
+* {
+  box-sizing: border-box;
 }
 
 /* Blurred gradient background throughout the entire app */
@@ -119,14 +155,14 @@ body::after {
 }
 
 :root {
-  --color-bg1: rgb(216, 218, 215);    
-  --color-bg2: rgb(216, 218, 215); 
-  --color1: 82, 106, 147        
-  --color2: 204, 220, 240;          
-  --color3: 180, 200, 230;    
-  --color4: 150, 180, 220;      
-  --color5: 82, 106, 147;        
-  --color-interactive: 119, 150, 237;
+  --color-bg1: rgb(226, 225, 220);    /* slightly warmer than #e2e1df */
+  --color-bg2: rgb(226, 225, 220);
+  --color1: 230, 200, 200;        /* muted blush */
+  --color2: 245, 222, 179;        /* warm peach */
+  --color3: 220, 210, 200;        /* soft warm gray */
+  --color4: 210, 180, 170;        /* muted rose */
+  --color5: 240, 230, 220;        /* light cream */
+  --color-interactive: 230, 200, 200; /* blush accent */
 
   --circle-size: 80%;
   --blending: hard-light;
@@ -158,6 +194,7 @@ body::after {
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   top: 0;
   left: 0;
+  z-index: 0;
 }
 
 .gradient-bg svg {
@@ -270,4 +307,88 @@ body::after {
     mix-blend-mode: overlay;
     opacity: 0.2;
 }
+
+  /* Book Animation Styles */
+  @keyframes pageFlipRight {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(-90deg);
+    }
+    100% {
+      transform: rotateY(-180deg);
+    }
+  }
+
+  @keyframes pageFlipLeft {
+    0% {
+      transform: rotateY(-180deg);
+    }
+    50% {
+      transform: rotateY(-90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .page-flip-right {
+    animation: pageFlipRight 0.6s ease-in-out;
+  }
+
+  .page-flip-left {
+    animation: pageFlipLeft 0.6s ease-in-out;
+  }
+
+  /* Book Shadow Effects */
+  .book-shadow {
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .page-shadow {
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.1),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Page Flip Library - Simple overflow fix */
+  .book-container,
+  .book-container * {
+    overflow: visible !important;
+  }
+
+  /* Ensure page flip doesn't create additional scrollbars */
+  .stf__parent {
+    overflow: visible !important;
+  }
+
+  .stf__block {
+    overflow: visible !important;
+  }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e2e1df;
+}
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+::-webkit-scrollbar-corner {
+  background: #e2e1df;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #bbb #e2e1df;
 }

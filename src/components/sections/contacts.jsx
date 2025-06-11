@@ -32,7 +32,7 @@ export const Contact = () => {
   return (
     <section
       id="contacts"
-      className="min-h-screen flex items-center justify-center py-20 bg-[rgb(216,218,215)]"
+      className="min-h-screen flex items-center justify-center py-20 bg-[#e2e1df]"
     >
       <RevealOnScroll>
 

@@ -24,7 +24,7 @@ export const Project4 = () => {
   ];
 
   return (
-    <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
+    <div className="min-h-screen bg-[#e2e1df] text-black p-10 py-80">
       {/* Main container for header */}
       <div className="max-w-6xl w-full">
         {/* Header Section */}
@@ -58,7 +58,7 @@ export const Project4 = () => {
           {/* Image on Top */}
           <div className="w-full flex justify-center">
             <img
-              src="c1.jpg"
+              src="/angie-portfolio/c1.jpg"
               alt="Mockup"
               className="w-full max-w-2xl shadow-lg rounded-lg"
             />
@@ -133,7 +133,7 @@ export const Project4 = () => {
               {/* Full-width Video Preview */}
               <div className="w-full mb-4 flex justify-center">
                 <video controls className="w-full" style={{ maxWidth: "1000px" }}>
-                  <source src={`clock_${i + 1}.mp4`} type="video/mp4" />
+                  <source src={`/angie-portfolio/clock_${i + 1}.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -154,7 +154,17 @@ export const Project4 = () => {
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/angie-portfolio/');
+            setTimeout(() => {
+              const section = document.getElementById('projrevamp');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.scrollTo(0, 0);
+              }
+            }, 100);
+          }}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back

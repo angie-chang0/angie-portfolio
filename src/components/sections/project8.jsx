@@ -12,7 +12,7 @@ export const Project8 = () => {
   }, []);
 
   return (
-    <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
+    <div className="py-25 min-h-screen flex flex-col items-center bg-[#e2e1df] text-black p-4">
       <div className="max-w-6xl w-full">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b-4 border-[rgb(129,148,201)]">
           <h1 className="bg-gradient-to-r from-[rgb(8,65,126)] to-[rgb(104,5,161)] bg-clip-text text-transparent leading-tight text-8xl font-bold mb-4 md:mb-0">
@@ -88,7 +88,17 @@ export const Project8 = () => {
         {/* Go Back Button */}
         <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/angie-portfolio/');
+            setTimeout(() => {
+              const section = document.getElementById('projrevamp');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.scrollTo(0, 0);
+              }
+            }, 100);
+          }}
           className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
         >
           Go Back
