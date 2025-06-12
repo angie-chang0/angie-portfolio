@@ -11,7 +11,7 @@ export const BookProgressBar = ({ currentPage, totalPages, onChangePage }) => {
     onChangePage(newPage);
   };
 
-  const progressPercent = (currentPage / (totalPages - 1)) * 100;
+  const progressPercent = (currentPage / (totalPages > 1 ? totalPages - 1 : 1)) * 100;
 
   return (
     <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: 30 }}>

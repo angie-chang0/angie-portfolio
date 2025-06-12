@@ -10,7 +10,7 @@ export const ProjRevamp = () => {
       title: "Loccamend App",
       description: "Mobile App that connects users through trusted recommendations. I served as the founding engineer for this app, reach XXX users.",
       image: "/angie-portfolio/loc_icon.gif",
-      tags: ["React", "Product Innovation", "Startup", "2025"],
+      tags: ["UX/UI", "Product Innovation", "React","Startup", "2025"],
       buttonAction: "project10",
     },
     {

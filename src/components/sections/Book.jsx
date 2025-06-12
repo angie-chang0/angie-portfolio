@@ -121,13 +121,13 @@ export const Book = () => {
     if (bookRef.current && !pageFlipRef.current) {
       // Initialize PageFlip for two-page spread
       pageFlipRef.current = new PageFlip(bookRef.current, {
-        width: 480,
-        height: 600,
+        width: 528,
+        height: 660,
         size: "fixed",
-        minWidth: 480,
-        maxWidth: 960,
-        minHeight: 600,
-        maxHeight: 600,
+        minWidth: 528,
+        maxWidth: 1056,
+        minHeight: 660,
+        maxHeight: 660,
         showCover: false,
         flippingTime: 1000,
         usePortrait: false,
@@ -185,7 +185,7 @@ export const Book = () => {
     >
       <FollowMouseHint visible={showHint} />
       <RevealOnScroll>
-        <div className="w-full max-w-4xl mx-auto flex items-center justify-center">
+        <div className="w-full max-w-4xl mx-auto flex items-center justify-center" style={{ marginTop: 20 }}>
 
           {/* Book Container - Two Page Spread */}
           <div className="flex justify-center items-center">
@@ -194,8 +194,8 @@ export const Book = () => {
               className="book-container book-shadow"
               style={{ 
                 width: '100%',
-                maxWidth: '960px', 
-                height: '600px',
+                maxWidth: '1056px',
+                height: '660px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
