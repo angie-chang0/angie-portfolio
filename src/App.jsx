@@ -20,6 +20,7 @@ import { Project8 } from './components/sections/project8';
 import { Project9 } from './components/sections/project9';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
+import { Locammend } from './components/sections/locammend.jsx';
 
 // Layout component for the main page
 const MainLayout = () => {
@@ -50,7 +51,7 @@ function App() {
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100 overflow-x-hidden`}>
+      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100 overflow-hidden`}>
         <ScrollToTop />
         <Navbar 
           menuOpen={menuOpen} 
@@ -106,6 +107,11 @@ function App() {
           <Route path="/project9" element={
             <ProjectLayout>
               <Project9 />
+            </ProjectLayout>
+          } />
+          <Route path="/angie-portfolio/locammend" element={
+            <ProjectLayout>
+              <Locammend />
             </ProjectLayout>
           } />
           

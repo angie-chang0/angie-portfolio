@@ -5,6 +5,32 @@ import { RevealOnScroll } from "../RevealOnScroll";
 // Sample data array with all your projects
 const projectsData = [
   {
+    id: "locammend",
+    title: "Locammend",
+    description: "Locammend is and app built on a network of trusted referrals between individuals and that leads to trustworthy service providers. I was the founding product, design and development lead, and I worked with a team of 7 during my time at this startup.",
+    image: "/angie-portfolio/locaheader.png",
+    tags: ["Client Project", "Product Development","UX/UI","Firebase", "AWS", "Full Stack Development", "React"],
+    buttonAction: "locammend",
+  },
+  {
+    id: "recipeHub",
+    title: "RecipeHub",
+    description:
+      "A WebApp that allows users to upload a link or picture to a recipe from anywhere on the web, and use our LLM to gather the recipe ingredients and instructions to save all in one place. Keeps track of user groceries and recommends recipes so that food does not go to waste.",
+    image: "/angie-portfolio/recipiehub.png",
+    tags: ["LLM/Machine Learning", "User Stories", "Agile/Scrum workflow", "React + Vite", "NodeJS", "PostgreSQL", "Docker"],
+    buttonAction: "project2",
+  },
+  {
+    id: "activeIQ",
+    title: "Active IQ Database",
+    description:
+      "Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation and stockwatch firms, providing critical information based on latest SEC filings.",
+    image: "/angie-portfolio/nq.png",
+    tags: ["Internship", "UX/UI", "WireFraming", "Figma", "Database Management", "MySQL"],
+    buttonAction: "project1",
+  },
+  {
     id: "myNewProject5",
     title: "Generative Art with p5.js",
     description:
@@ -65,24 +91,6 @@ const projectsData = [
     buttonAction: "project4",
   },
   {
-    id: "activeIQ",
-    title: "Active IQ Database",
-    description:
-      "Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation and stockwatch firms, providing critical information based on latest SEC filings.",
-    image: "/angie-portfolio/nq.png",
-    tags: ["Internship", "UX/UI", "WireFraming", "Figma", "Database Management", "MySQL"],
-    buttonAction: "project1",
-  },
-  {
-    id: "recipeHub",
-    title: "RecipeHub",
-    description:
-      "A WebApp that allows users to upload a link or picture to a recipe from anywhere on the web, and use our LLM to gather the recipe ingredients and instructions to save all in one place. Keeps track of user groceries and recommends recipes so that food does not go to waste.",
-    image: "/angie-portfolio/recipiehub.png",
-    tags: ["LLM/Machine Learning", "User Stories", "Agile/Scrum workflow", "React + Vite", "NodeJS", "PostgreSQL", "Docker"],
-    buttonAction: "project2",
-  },
-  {
     id: "csProjects",
     title: "Computer Systems Assorted Projects",
     description:
@@ -107,6 +115,7 @@ const projectsData = [
     tags: ["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"],
     buttonAction: "project3",
   },
+
 ];
 
 export const Projects = () => {
@@ -178,6 +187,17 @@ export const Projects = () => {
     }
     // If no link but we have buttonAction => internal project route
     if (project.buttonAction) {
+      // Special case for Locammend
+      if (project.buttonAction === 'locammend') {
+        return (
+          <button
+            onClick={() => navigate('/angie-portfolio/locammend')}
+            className="text-black hover:text-black/80 transition-colors my-4"
+          >
+            View Project →
+          </button>
+        );
+      }
       return (
         <button
           onClick={() => navigate(`/${project.buttonAction}`)}

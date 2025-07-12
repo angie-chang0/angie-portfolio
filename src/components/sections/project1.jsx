@@ -11,6 +11,11 @@ export const Project1 = () => {
 
   return (
     <div className="py-25 min-h-screen flex flex-col items-center justify-start bg-[rgb(216,218,215)] text-black p-10">
+      {/* Navigation Buttons */}
+      <div className="flex w-full justify-between items-center mb-8">
+        <button onClick={() => navigate('/project2')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">previous</button>
+        <button onClick={() => navigate('/project3')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">next</button>
+      </div>
       <div className="max-w-6xl w-full">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b-4  border-[rgb(174,66,49)]">
@@ -67,7 +72,7 @@ export const Project1 = () => {
             </div>
             <div className="w-full md:w-1/2 flex justify-end">
               <img
-                src="aq1.png"
+                src="/angie-portfolio/aq1.png"
                 alt="Dashboard Mockup"
                 className="w-full max-w-lg shadow-lg rounded-lg"
               />
@@ -155,7 +160,7 @@ export const Project1 = () => {
             {/* Right Column: Stacked Image */}
             <div className="w-full md:w-1/2 flex justify-end">
               <img
-                src="aq2.png"
+                src="/angie-portfolio/aq2.png"
                 alt="Dashboard Mockup 1"
                 className="w-full  shadow-lg rounded-lg mb-4"
               />
@@ -206,12 +211,12 @@ export const Project1 = () => {
             {/* Left Column: Two Images */}
             <div className="w-full md:w-1/2 flex flex-col gap-2"> 
               <img 
-                src="aq3.png" 
+                src="/angie-portfolio/aq3.png" 
                 alt="First Image" 
                 className="w-full max-w-lg rounded-lg" 
               />
               <img 
-                src="aq11.png" 
+                src="/angie-portfolio/aq11.png" 
                 alt="Second Image" 
                 className="w-full max-w-lg rounded-lg py-5" 
               />
@@ -219,7 +224,7 @@ export const Project1 = () => {
             {/* Right Column: Original Image */}
             <div className="w-full md:w-1/2">
               <img 
-                src="aq10.png" 
+                src="/angie-portfolio/aq10.png" 
                 alt="Original Right Image" 
                 className="w-full max-w-2xl py-30" 
               />

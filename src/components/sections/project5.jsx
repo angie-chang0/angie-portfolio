@@ -418,6 +418,11 @@ export const Project5 = () => {
 
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
+      {/* Navigation Buttons */}
+      <div className="flex w-full justify-between items-center mb-8">
+        <button onClick={() => navigate('/project4')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">Back</button>
+        <button onClick={() => navigate('/project6')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">Next</button>
+      </div>
       <div className="max-w-6xl w-full">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b-4 border-[rgb(129,148,201)]">
           <h1 className="bg-gradient-to-r from-[rgb(122,178,238)] to-[rgb(135,231,174)] bg-clip-text text-transparent leading-tight text-8xl font-bold mb-4 md:mb-0">
