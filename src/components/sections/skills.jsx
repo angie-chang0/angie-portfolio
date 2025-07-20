@@ -55,7 +55,7 @@ export const About = () => {
 
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
-            Skills
+            Skills (these are outdated, updates coming soon :)
           </h2>
 
           <div className="rounded-xl p-6 sm:p-8 py-10 border-black border hover:-translate-y-1 transition-all">
