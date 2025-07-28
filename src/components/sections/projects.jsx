@@ -191,7 +191,7 @@ export const Projects = () => {
       if (project.buttonAction === 'locammend') {
         return (
           <button
-            onClick={() => navigate('/angie-portfolio/locammend')}
+            onClick={() => navigate('/locammend')}
             className="text-black hover:text-black/80 transition-colors my-4"
           >
             View Project →
