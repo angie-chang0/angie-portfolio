@@ -109,7 +109,7 @@ function App() {
               <Project9 />
             </ProjectLayout>
           } />
-          <Route path="/angie-portfolio/locammend" element={
+          <Route path="/locammend" element={
             <ProjectLayout>
               <Locammend />
             </ProjectLayout>
