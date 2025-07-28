@@ -7,9 +7,9 @@ const projectsData = [
   {
     id: "locammend",
     title: "Locammend",
-    description: "Locammend is and app built on a network of trusted referrals between individuals and that leads to trustworthy service providers. I was the founding product, design and development lead, and I worked with a team of 7 during my time at this startup.",
+    description: "Locammend is an app built on a network of trusted referrals between individuals and that leads to trustworthy service providers. I was the founding product, design and development lead, and I worked with a team of 7 during my time at this startup.",
     image: "/angie-portfolio/locaheader.png",
-    tags: ["Client Project", "Product Development","UX/UI","Firebase", "AWS", "Full Stack Development", "React"],
+    tags: ["Professional Project", "Product", "UX/UI", "AI", "Database", "Coding"],
     buttonAction: "locammend",
   },
   {
@@ -18,7 +18,7 @@ const projectsData = [
     description:
       "A WebApp that allows users to upload a link or picture to a recipe from anywhere on the web, and use our LLM to gather the recipe ingredients and instructions to save all in one place. Keeps track of user groceries and recommends recipes so that food does not go to waste.",
     image: "/angie-portfolio/recipiehub.png",
-    tags: ["LLM/Machine Learning", "User Stories", "Agile/Scrum workflow", "React + Vite", "NodeJS", "PostgreSQL", "Docker"],
+    tags: ["CMU","Product","AI", "UX/UI", "Database", "Coding"],
     buttonAction: "project2",
   },
   {
@@ -27,7 +27,7 @@ const projectsData = [
     description:
       "Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation and stockwatch firms, providing critical information based on latest SEC filings.",
     image: "/angie-portfolio/nq.png",
-    tags: ["Internship", "UX/UI", "WireFraming", "Figma", "Database Management", "MySQL"],
+    tags: ["Professional Project", "UX/UI", "Coding", "Database"],
     buttonAction: "project1",
   },
   {
@@ -36,7 +36,7 @@ const projectsData = [
     description:
         "Considering elements such as symmetry, rhythm, and pattern, I wrote code in P5.JS that could generate infinite variations of a tiled pattern; inspired by the work of MC Escher, I based my pattern off of an isometric cityscape. ",
     image: "/angie-portfolio/iso3.png",
-    tags: ["Personal Project", "Generative Art", "Creative Coding", "P5.js", "JavaScript"],
+    tags: ["CMU","Creative" ,"Coding"],
     buttonAction: "project5", // internal link => setShowProject("project5")
   },
   {
@@ -45,7 +45,7 @@ const projectsData = [
     description:
         "  This is a project I made for a competition. I used the Brooklyn Bridge as my main subject and created a VR experience that takes place on the bridge in the 1920s. I had to model the bridge, the trolleys, and the people. I also had to create a train station and a train. The video shows the experience in action.",
     image: "/angie-portfolio/br.jpg",
-    tags: ["Personal Project", "3D Modelling", "VR/AR", "Unreal Engine", "Blueprints", "Oculus Go"],
+    tags: ["Personal Project", "3D Modelling", "VR/AR", "Creative"],
     buttonAction: "project9", // internal link => setShowProject("project5")
   },
   {
@@ -54,7 +54,7 @@ const projectsData = [
     description:
         "Using priniples of recursion and perlin noise, I created 2 projects that generate infinitely. I created a tree that continues to grow forever, and a phyllotactic spiral that shrinks and contracts. ",
     image: "/angie-portfolio/t2.png",
-    tags: ["Personal Project", "Generative Art", "Creative Coding", "P5.js", "JavaScript"],
+    tags: ["Personal Project", "Creative", "Coding"],
     buttonAction: "project8", 
   },
   {
@@ -62,7 +62,7 @@ const projectsData = [
     title: "TouchDesigner: Interactive Environment",
     description: "Using TouchDesigner, I created a physics simluator that allows a user to manipulate a water like substance. through the scope of this project, I created many smaller prototypes using compuer vision and motion capture. Take a peek! :)",
     image: "/angie-portfolio/mq3.png",
-    tags: ["Personal Project","TouchDesigner", "Creative Coding", "Computer Vision", "Motion Capture", "Physics Simulation", "3D Modelling"],
+    tags: ["Personal Project", "Creative", "Computer Vision", "Motion Capture","3D Modelling"],
     link: "project6",
   },
   {
@@ -70,7 +70,7 @@ const projectsData = [
     title: "LLM Depth Map + Machine Learning",
     description: "Contained in this project is mini projects that culminates in a final trained LLM created within COMFYUI that uses machine learning to detect the depth within a given image. Using this, I programmed a parallax effect within images for manipulation. ",
     image: "/angie-portfolio/hand.png",
-    tags: ["Personal Project","LLM/Machine Learning", "JS","Python", "ComfyUI", "Javascript", "public installation", "react"],
+    tags: ["Personal Project","AI", "Creative"],
     link: "project7",
   },
   {
@@ -79,7 +79,7 @@ const projectsData = [
     description:
       "Scalable PDF scraper that takes CMU course finals and smoothly adds final to Google Calendar using regular expressions, PyPlumber, and JS scripting.",
     image: "/angie-portfolio/cmufinals.png",
-    tags: ["Personal Project", "Python", "HTML/CSS", "JS", "AWS", "WebApp"],
+    tags: ["Personal Project", "Coding"],
     link: "https://angie-chang0.github.io/cmufinalsplanner/",
   },
   {
@@ -87,7 +87,7 @@ const projectsData = [
     title: "10 Clocks",
     description: "Clocks! Clocks! In this creative project, I rapidly prototyped 10 clocks and redefined from traditional time-keeping. I implemented these clocks in P5.JS, and implemented several different algorithms to represent time passing.",
     image: "/angie-portfolio/c.png",
-    tags: ["Personal Project", "Creative Coding", "P5.js", "JavaScript"],
+    tags: ["Personal Project", "Creative","Coding"],
     buttonAction: "project4",
   },
   {
@@ -96,7 +96,7 @@ const projectsData = [
     description:
       "Cache: Built a cache sim in C that utilized an LRU policy to simulate the L3 cache. Malloc: Implemented a memory manager that dynamically allocates heap memory through the use of segregated lists and unbounded arrays. Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and allows for I/O redirection.",
     image: "/angie-portfolio/malloc.png",
-    tags: ["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"],
+    tags: ["CMU","Coding"],
     buttonAction: "project3",
   },
   {
@@ -104,17 +104,17 @@ const projectsData = [
     title: "what does it cost?",
     description: "A creative code project. Coming soon!",
     image: "/angie-portfolio/gray.png",
-    tags: ["LLM/Machine Learning", "JS", "P5.js", "Javascript", "public installation", "react"],
+    tags: ["AI", "Coding", "Creative"],
     buttonAction: "project2",
   },
-  {
-    id: "freelance",
-    title: "Freelance Web Developer",
-    description: "coming soon!",
-    image: "/angie-portfolio/gray.png",
-    tags: ["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"],
-    buttonAction: "project3",
-  },
+  // {
+  //   id: "freelance",
+  //   title: "Freelance Web Developer",
+  //   description: "coming soon!",
+  //   image: "/angie-portfolio/gray.png",
+  //   tags: ["C", "Memory Hierarchy", "Cache", "Sockets", "Control & System Calls"],
+  //   buttonAction: "project3",
+  // },
 
 ];
 
