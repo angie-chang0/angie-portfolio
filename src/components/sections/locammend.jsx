@@ -266,7 +266,7 @@ export const Locammend = () => {
             >
               <ul className="list-disc pl-6">
                 <li className="mb-3">Set up and maintained the team’s GitHub repository, including making PR conventions and code quality guidelines for scalable, modular development and continuous integration.</li>
-                <li className="mb-3">Actively contributed to frontend development using React Native, building reusable components closely aligned with Figma specs (over 1400 lines of code!).</li>
+                <li className="mb-3">Actively contributed to frontend development using React Native, building reusable components closely aligned with Figma specs (over 30000 lines of code!).</li>
                 <li className="mb-3">Guided backend integration efforts, collaborating across teams to ensure API usage (used Swagger UI to document enpoints, schema, and endpoint usage for frontend dev) and performance alignment.</li>
                 <li className="mb-3">Conducted code reviews during daily engineering syncs, enforcing best practices and catching regressions early.</li>
                 <li className="mb-3">Led deployment to TestFlight using Expo’s EAS CLI, creating a stable production build for beta users, investors, and accelerator demos.</li>
