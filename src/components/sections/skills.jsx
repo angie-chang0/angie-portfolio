@@ -2,118 +2,120 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { useState } from "react";
 
 export const About = () => {
-  const frontendSkills = [
-    "Python",
-    "C/C++",
-    "JavaScript",
-    "TypeScript",
-    "ReactJS",
-    "NodeJS",
-    "TailwindCSS",
-    "Vite",
-    "SML",
-    "OCaml",
-    "Assembly x86",
-    "HTML/CSS",
-    "Pandas",
-    "Bootstrap",
-    "Processing",
-    "NoSQL",
-    "Android SDK",
-    "P5.js",
-    "GLSL"
+  const technicalSkills = [
+    "Python", "C", "C++", "HTML/CSS", "JS", "Assembly x86", "PostgreSQL", "MySQL", 
+    "React", "Node", "TailwindCSS", "React Native", "Swift", "SML", "OCaml", "R", 
+    "Flutter", "Firestore database", "MongoDB", "Cloud Computing", "Pandas", 
+    "Processing", "p5.js", "WebGL", "GLSL", "Vite", "Jest"
   ];
 
-  const backendSkills = [
-    "Git",
-    "Excel",
-    "AWS",
-    "Docker",
-    "Firebase",
-    "Figma",
-    "Canva",
-    "Toon Boom",
-    "Adobe Illustrator",
-    "Adobe Photoshop",
-    "Unity",
-    "TouchDesigner",
-    "Procreate",
-    "Google Suite",
-    "Unreal Engine",
-    "Slack"
+  const tools = [
+    "Cursor", "Microsoft Suite", "Photoshop", "Illustrator", "After Effects", 
+    "Indesign", "Git", "Procreate", "Jupyter Notebook", "Canva", "XCode", 
+    "Google Suite", "Unreal Engine", "Unity", "Slack", "Toon Boom", "AWS S3"
   ];
+
+  const methods = [
+    "Wireframing", "Experience prototyping", "User stories", "Affinity Diagramming", 
+    "Storyboarding", "Animating", "Motion design", "User + Stakeholder Journey Mapping", 
+    "Think aloud study", "DAU/MAU", "Speed dating", "Agile/Scrum methods"
+  ];
+
   const [cImage, cCatImage] = useState("/angie-portfolio/k2.png"); 
 
   return (
     <section
       id="#"
-      className="flex items-center justify-center py-20 bg-[rgb(216,218,215)] px-4 sm:px-6"
+      className="flex items-center justify-center py-20 bg-[rgb(216,218,215)] px-4 sm:px-6 relative overflow-hidden"
     >
-      <RevealOnScroll>
-        {/* Background Decorative Element */}
-        <span className="hidden md:block absolute left-[-90px] top-1/3 text-[300px] text-blue-800/20 blur-md select-none">✭</span>
+      {/* Background Decorative Elements */}
+      <span className="hidden md:block absolute left-[-90px] top-1/3 text-[300px] text-blue-800/20 blur-sm select-none">✭</span>
+      <span className="hidden md:block absolute right-[-90px] top-2/3 text-[200px] text-blue-800/15 blur-sm select-none">✭</span>
+      <span className="hidden lg:block absolute left-1/4 top-1/4 text-[150px] text-blue-800/10 blur-sm select-none">✭</span>
+      <span className="hidden lg:block absolute right-1/4 bottom-1/4 text-[180px] text-blue-800/12 blur-sm select-none">✭</span>
+      <span className="hidden md:block absolute right-[-120px] top-[-50px] text-[350px] text-blue-800/18 blur-sm select-none">✭</span>
 
-        <div className="max-w-3xl mx-auto">
+      
+      <div className="max-w-6xl mx-auto w-full px-8 md:px-16 lg:px-24 relative z-10">
+        <RevealOnScroll>
           <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
-            Skills (these are outdated, updates coming soon :)
+            Skills
           </h2>
+        </RevealOnScroll>
 
-          <div className="rounded-xl p-6 sm:p-8 py-10 border-black border hover:-translate-y-1 transition-all">
-            <p className="text-black mb-6 text-center sm:text-left">
-              Ordered based on relevance and proficiency
-            </p>
-
-            {/* Mobile Friendly Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 text-black text-center sm:text-left">
-                  Technical
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-black/10 text-black py-1 px-3 rounded-full text-sm hover:bg-black/20 
-                                    hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 text-black text-center sm:text-left">
-                  Tools
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-black/10 text-black py-1 px-3 rounded-full text-sm hover:bg-black/20 
-                                    hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+        {/* Technical Skills Section */}
+        <RevealOnScroll>
+          <div className="mt-20 mb-12 flex items-start gap-40">
+            <h3 className="text-2xl font-bold text-black flex-shrink-0" 
+                style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+              Technical
+            </h3>
+            <div className="flex flex-wrap gap-3 flex-1">
+              {technicalSkills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-black/10 text-black py-1 px-3 rounded-full text-md hover:bg-black/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
-        {/* Responsive Image Section */}
-        <div className="relative sm:absolute bottom-[-80px] sm:right-[-250px] flex justify-center sm:justify-end mt-6 sm:mt-0">
-          <img 
-            src={cImage} 
-            alt="AnieCat" 
-            className="w-32 h-32 sm:w-45 sm:h-42 transition-all duration-300"
-            onMouseEnter={() => cCatImage("/angie-portfolio/k2b.png")} 
-            onMouseLeave={() => cCatImage("/angie-portfolio/k2.png")} 
-          />
-        </div>
+        {/* Tools Section */}
+        <RevealOnScroll>
+          <div className="mt-20 mb-12 flex items-start gap-40">
+            <h3 className="text-2xl font-bold text-black flex-shrink-0" 
+                style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+              Tools
+            </h3>
+            <div className="flex flex-wrap gap-3 flex-1">
+              {tools.map((tool, index) => (
+                <span
+                  key={index}
+                  className="bg-black/10 text-black py-1 px-3 rounded-full text-md hover:bg-black/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        </RevealOnScroll>
 
-      </RevealOnScroll>
+        {/* Methods Section */}
+        <RevealOnScroll>
+          <div className="mt-20 mb-12 flex items-start gap-40">
+            <h3 className="text-2xl font-bold text-black flex-shrink-0" 
+                style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+              Methods
+            </h3>
+            <div className="flex flex-wrap gap-3 flex-1">
+              {methods.map((method, index) => (
+                <span
+                  key={index}
+                  className="bg-black/10 text-black py-1 px-3 rounded-full text-md hover:bg-black/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition"
+                >
+                  {method}
+                </span>
+              ))}
+            </div>
+          </div>
+        </RevealOnScroll>
+
+        {/* Cat Image */}
+        <RevealOnScroll>
+          <div className="flex justify-center mt-8">
+            <img 
+              src={cImage} 
+              alt="AnieCat" 
+              className="w-32 h-32 transition-all duration-300"
+              onMouseEnter={() => cCatImage("/angie-portfolio/k2b.png")} 
+              onMouseLeave={() => cCatImage("/angie-portfolio/k2.png")} 
+            />
+          </div>
+        </RevealOnScroll>
+      </div>
     </section>
   );
 };

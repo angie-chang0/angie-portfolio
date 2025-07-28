@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
-import CircularGallery from './circularGallery';
-import CircularGallery2 from './c2';
-import CircularGallery3 from './c3'; 
-import CircularGallery4 from './c4';
+import ClickableGallery from '../ClickableGallery';
 import { useNavigate } from 'react-router-dom';
+import ImageModal from '../ImageModal';
 
 // Reusable dropdown for roles
 function RoleDropdown({ color, icon, title, children, defaultOpen }) {
@@ -40,6 +38,21 @@ export const Locammend = () => {
   const headerRef = useRef(null);
   const navigate = useNavigate();
   const [dropdownValue, setDropdownValue] = useState('contacts');
+  
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState('');
+  const [modalAlt, setModalAlt] = useState('');
+  
+  const openModal = (imageSrc, altText) => {
+    setModalImage(imageSrc);
+    setModalAlt(altText);
+    setModalOpen(true);
+  };
+  
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   
   // Scrollable images state - 4 separate sections
   const [scrollPosition1, setScrollPosition1] = useState(0);
@@ -144,8 +157,9 @@ export const Locammend = () => {
           ref={headerRef}
           src="/angie-portfolio/locaheader.png"
           alt="Locammend Header"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top cursor-pointer hover:opacity-90 transition-opacity"
           style={{ maxHeight: '400px', minHeight: '220px', imageRendering: 'auto' }}
+          onClick={() => openModal("/angie-portfolio/locaheader.png", "Locammend Header")}
         />
       </div>
       {/* Navigation Buttons */}
@@ -217,7 +231,7 @@ export const Locammend = () => {
 
         {/* Role Dropdowns Section - left-aligned */}
         <RevealOnScroll>
-        <div className="text-center text-lg md:text-xl mb-6 mt-2" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+        <div className="text-center text-lg md:text-xl mb-6 mt-6" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Details about my exact responsibilities within each role
             </div>
           <div className="mt-10 flex flex-col gap-4 w-full text-left">
@@ -263,7 +277,13 @@ export const Locammend = () => {
         {/* RevealOnScroll: Endstate Design Section */}
         {/* Insert header.png above Phase 1 */}
         <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex justify-center items-center mt-10" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
-          <img src="/angie-portfolio/header.png" alt="Header" className="w-full object-cover" style={{ maxHeight: '400px' }} />
+          <img 
+            src="/angie-portfolio/header.png" 
+            alt="Header" 
+            className="w-full object-cover cursor-pointer hover:opacity-90 transition-opacity" 
+            style={{ maxHeight: '400px' }} 
+            onClick={() => openModal("/angie-portfolio/header.png", "Header")}
+          />
         </div>
         <RevealOnScroll>
           <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e8ccb0]" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
@@ -281,7 +301,13 @@ export const Locammend = () => {
             </p>
             {/* Phones Image and Labels */}
             <div className="w-full flex flex-col items-center mb-8">
-              <img src="/angie-portfolio/phones.png" alt="Locammend Endstate Phones" className="w-full max-w-7xl mx-auto" style={{maxWidth: '1200px'}} />
+              <img 
+                src="/angie-portfolio/phones.png" 
+                alt="Locammend Endstate Phones" 
+                className="w-full max-w-7xl mx-auto cursor-pointer hover:opacity-90 transition-opacity" 
+                style={{maxWidth: '1200px'}} 
+                onClick={() => openModal("/angie-portfolio/phones.png", "Locammend Endstate Phones")}
+              />
               <div className="grid grid-cols-5 gap-0 w-full max-w-[1270px] mt-2">
                 <span className="text-base md:text-lg font-medium text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>Home</span>
                 <span className="text-base md:text-lg font-medium text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>Find</span>
@@ -327,11 +353,26 @@ export const Locammend = () => {
               {/* Survey Questions Grid - q1 left, q2/q3 stacked right */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 w-full">
                 {/* Left: q1.png (tall) */}
-                <img src="/angie-portfolio/q1.png" alt="Survey Question 1" className="rounded-xl border border-[#f7b84b] bg-white w-full h-full object-contain" />
+                <img 
+                  src="/angie-portfolio/q1.png" 
+                  alt="Survey Question 1" 
+                  className="rounded-xl border border-[#f7b84b] bg-white w-full h-full object-contain cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/q1.png", "Survey Question 1")}
+                />
                 {/* Right: q2/q3 stacked */}
                 <div className="flex flex-col gap-6 h-full">
-                  <img src="/angie-portfolio/q2.png" alt="Survey Question 2" className="rounded-xl border border-[#f7b84b] bg-white w-full object-contain" />
-                  <img src="/angie-portfolio/q3.png" alt="Survey Question 3" className="rounded-xl border border-[#f7b84b] bg-white w-full object-contain" />
+                  <img 
+                    src="/angie-portfolio/q2.png" 
+                    alt="Survey Question 2" 
+                    className="rounded-xl border border-[#f7b84b] bg-white w-full object-contain cursor-pointer hover:opacity-90 transition-opacity" 
+                    onClick={() => openModal("/angie-portfolio/q2.png", "Survey Question 2")}
+                  />
+                  <img 
+                    src="/angie-portfolio/q3.png" 
+                    alt="Survey Question 3" 
+                    className="rounded-xl border border-[#f7b84b] bg-white w-full object-contain cursor-pointer hover:opacity-90 transition-opacity" 
+                    onClick={() => openModal("/angie-portfolio/q3.png", "Survey Question 3")}
+                  />
                 </div>
               </div>
               {/* Insights Subheading */}
@@ -360,10 +401,30 @@ export const Locammend = () => {
               </div>
               {/* Bar Charts Grid - always below */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <img src="/angie-portfolio/slide1.png" alt="Bar Chart 1" className="rounded-xl border border-[#e0e0e0] bg-white w-full" />
-                <img src="/angie-portfolio/slide2.png" alt="Bar Chart 2" className="rounded-xl border border-[#e0e0e0] bg-white w-full" />
-                <img src="/angie-portfolio/slide3.png" alt="Bar Chart 3" className="rounded-xl border border-[#e0e0e0] bg-white w-full" />
-                <img src="/angie-portfolio/slide4.png" alt="Bar Chart 4" className="rounded-xl border border-[#e0e0e0] bg-white w-full" />
+                <img 
+                  src="/angie-portfolio/slide1.png" 
+                  alt="Bar Chart 1" 
+                  className="rounded-xl border border-[#e0e0e0] bg-white w-full cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/slide1.png", "Bar Chart 1")}
+                />
+                <img 
+                  src="/angie-portfolio/slide2.png" 
+                  alt="Bar Chart 2" 
+                  className="rounded-xl border border-[#e0e0e0] bg-white w-full cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/slide2.png", "Bar Chart 2")}
+                />
+                <img 
+                  src="/angie-portfolio/slide3.png" 
+                  alt="Bar Chart 3" 
+                  className="rounded-xl border border-[#e0e0e0] bg-white w-full cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/slide3.png", "Bar Chart 3")}
+                />
+                <img 
+                  src="/angie-portfolio/slide4.png" 
+                  alt="Bar Chart 4" 
+                  className="rounded-xl border border-[#e0e0e0] bg-white w-full cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/slide4.png", "Bar Chart 4")}
+                />
               </div>
             </div>
           </section>
@@ -425,7 +486,12 @@ export const Locammend = () => {
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8 mb-12 items-stretch">
               {/* Whiteboard Image */}
               <div className="flex-1 flex flex-col items-left justify-left mb-10 rounded-lg h-full">
-                <img src="/angie-portfolio/whiteboard.jpg" alt="Whiteboard" className="w-full max-w-3xl h-full object-contain mb-4" />
+                <img 
+                  src="/angie-portfolio/whiteboard.jpg" 
+                  alt="Whiteboard" 
+                  className="w-full max-w-3xl h-full object-contain mb-4 cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/whiteboard.jpg", "Whiteboard")}
+                />
                 <p className="text-sm text-[#5e5f61] text-center max-w-3xl" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Initial brainstorming session where we mapped out user flows, feature priorities, etc.
                 </p>
@@ -453,13 +519,18 @@ export const Locammend = () => {
               </div>
             </div>
             {/* Caption under whiteboard row */}
-            <p className="text-base md:text-xl text-left mt-16 max-w-6xl w-full" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-base md:text-xl text-left mt-6 max-w-6xl w-full" style={{ fontFamily: 'Inter, sans-serif' }}>
               Taking our ideas, I created the following low fidelity mockup for each wireframe and how the screens would be navigated through, and started planning out how we could compartmentalize and reuse different screens.
             </p>
             {/* Sketch Image Section */}
             <div className="w-full flex flex-col items-left">
               <div className="w-full rounded-2xl border-[#d1d1d1] p-4 md:p-8 flex items-center justify-center mb-4">
-                <img src="/angie-portfolio/sketch.jpg" alt="Wireframe Sketch" className="w-full max-w-7xl rounded-lg" />
+                <img 
+                  src="/angie-portfolio/sketch.jpg" 
+                  alt="Wireframe Sketch" 
+                  className="w-full max-w-7xl rounded-lg cursor-pointer hover:opacity-90 transition-opacity" 
+                  onClick={() => openModal("/angie-portfolio/sketch.jpg", "Wireframe Sketch")}
+                />
               </div>
             </div>
           </section>
@@ -721,46 +792,138 @@ contact visibility in the future.</li>
               Each Image carosel displays a flow of screens that the user would navigate through, for each feature. Drag to scroll through the images. To see the image in better quality, please click on the image. 
             </p>
         </div>
-        <div className="text-black text-2xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
-            Sign-up and Login
-          </div>
-        <div className="w-screen h-[600px] mb-15" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
-          <CircularGallery 
-            bend={0} textColor="#ffffff" borderRadius={0.07} scrollEase={0.02}
-            imageScale={1}
-          />
-        </div>
-        <div className="text-black text-2xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
-            Find and Share
-          </div>
-        <div className="w-screen h-[600px] mb-15" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
-          <CircularGallery2
-            bend={0} textColor="#ffffff" borderRadius={0.07} scrollEase={0.025}
-            imageScale={0.6}
-          />
-        </div>
-        <div className="text-black text-2xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
-            Create Contact
-          </div>
-        <div className="w-screen h-[600px] mb-15" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
-          <CircularGallery3 
-            bend={0} textColor="#ffffff" borderRadius={0.1} scrollEase={0.04}
-            imageScale={0.6}
-          />
-        </div>
-        <div className="text-black text-2xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
-            Consumer Profile
-          </div>
-        <div className="w-screen h-[600px] mb-15" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
-          <CircularGallery4 
-            bend={0} textColor="#ffffff" borderRadius={0.1} scrollEase={0.03}
-            imageScale={1}
-          />
+        <ClickableGallery
+          title="Sign-up and Login"
+          images={[
+            '/angie-portfolio/sp1.png',
+            '/angie-portfolio/sp2.png',
+            '/angie-portfolio/sp3.png',
+            '/angie-portfolio/sp4.png',
+            '/angie-portfolio/sp5.png',
+            '/angie-portfolio/sp6.png',
+            '/angie-portfolio/sp7.png',
+            '/angie-portfolio/sp8.png',
+            '/angie-portfolio/sp9.png',
+            '/angie-portfolio/sp10.png',
+            '/angie-portfolio/sp11.png',
+            '/angie-portfolio/sp12.png',
+            '/angie-portfolio/sp13.png',
+            '/angie-portfolio/sp14.png',
+            '/angie-portfolio/sp15.png',
+            '/angie-portfolio/sp16.png',
+            '/angie-portfolio/sp17.png',
+            '/angie-portfolio/sp18.png',
+            '/angie-portfolio/sp19.png',
+            '/angie-portfolio/sp20.png',
+            '/angie-portfolio/sp21.png',
+            '/angie-portfolio/sp22.png'
+          ]}
+          autoScrollSpeed={1}
+          imageScale={0.6}
+        />
+        
+        <ClickableGallery
+          title="Find and Share"
+          images={[
+            '/angie-portfolio/sa1.png',
+            '/angie-portfolio/sa2.png',
+            '/angie-portfolio/sa3.png',
+            '/angie-portfolio/sa4.png',
+            '/angie-portfolio/sa5.png',
+            '/angie-portfolio/sa6.png',
+            '/angie-portfolio/sa7.png',
+            '/angie-portfolio/sa8.png',
+            '/angie-portfolio/sa9.png',
+            '/angie-portfolio/sa10.png',
+            '/angie-portfolio/sa11.png',
+            '/angie-portfolio/sa12.png',
+            '/angie-portfolio/sa13.png',
+            '/angie-portfolio/sa14.png',
+            '/angie-portfolio/sa15.png',
+            '/angie-portfolio/sa16.png',
+            '/angie-portfolio/sa17.png',
+            '/angie-portfolio/sa18.png',
+            '/angie-portfolio/sa19.png',
+            '/angie-portfolio/sa20.png',
+            '/angie-portfolio/sa21.png'
+          ]}
+          autoScrollSpeed={1.5}
+          imageScale={0.6}
+        />
+        
+        <ClickableGallery
+          title="Create Contact"
+          images={[
+            '/angie-portfolio/sr1.png',
+            '/angie-portfolio/sr2.png',
+            '/angie-portfolio/sr3.png',
+            '/angie-portfolio/sr4.png',
+            '/angie-portfolio/sr5.png',
+            '/angie-portfolio/sr6.png',
+            '/angie-portfolio/sr7.png',
+            '/angie-portfolio/sr8.png',
+            '/angie-portfolio/sr9.png',
+            '/angie-portfolio/sr10.png',
+            '/angie-portfolio/sr11.png',
+            '/angie-portfolio/sr12.png',
+            '/angie-portfolio/sr13.png',
+            '/angie-portfolio/sr14.png',
+            '/angie-portfolio/sr15.png',
+            '/angie-portfolio/sr16.png',
+            '/angie-portfolio/sr17.png',
+            '/angie-portfolio/sr18.png',
+            '/angie-portfolio/sr19.png'
+          ]}
+          autoScrollSpeed={2}
+          imageScale={0.6}
+        />
+        
+        <ClickableGallery
+          title="Consumer Profile"
+          images={[
+            '/angie-portfolio/sw1.png',
+            '/angie-portfolio/sw2.png',
+            '/angie-portfolio/sw3.png',
+            '/angie-portfolio/sw4.png',
+            '/angie-portfolio/sw5.png',
+            '/angie-portfolio/sw6.png',
+            '/angie-portfolio/sw7.png',
+            '/angie-portfolio/sw8.png',
+            '/angie-portfolio/sw9.png',
+            '/angie-portfolio/sw10.png',
+            '/angie-portfolio/sw11.png',
+            '/angie-portfolio/sw12.png',
+            '/angie-portfolio/sw13.png'
+          ]}
+          autoScrollSpeed={1.2}
+          imageScale={0.6}
+        />
+        
+        {/* Figma Embed Section */}
+        <div className="w-full max-w-6xl mx-auto mt-16 mb-8">
+          <p className="text-lg text-center mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+            Feel free to look around the Figma file to see how I break down a full user flow, and how I lay out wireframes for development :)
+          </p>
+          <iframe 
+            style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} 
+            width="100%" 
+            height="600" 
+            src="https://embed.figma.com/design/ciwF9W0i1hoSaT3OSuIjUc/Locammend_Prototype--Copy-?node-id=2514-24287&embed-host=share" 
+            allowFullScreen
+            title="Locammend Figma Prototype"
+            className="rounded-lg"
+          ></iframe>
         </div>
         
         {/* Insert sec3.png above Footer - full-bleed */}
         <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex justify-center items-center mt-10" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
-          <img src="/angie-portfolio/sect3.png" alt="Section 3" className="w-full object-cover" style={{ maxHeight: '400px' }} />
+          <img 
+            src="/angie-portfolio/sect3.png" 
+            alt="Section 3" 
+            className="w-full object-cover cursor-pointer hover:opacity-90 transition-opacity" 
+            style={{ maxHeight: '400px' }} 
+            onClick={() => openModal("/angie-portfolio/sect3.png", "Section 3")}
+          />
         </div>
         
         {/* Footer Section */}
@@ -768,16 +931,24 @@ contact visibility in the future.</li>
           <div className="w-full max-w-7xl mx-auto px-5 md:px-12 py-12">
             <div className="flex flex-col items-center">
               <button 
-                onClick={() => navigate('/')} 
+                onClick={() => navigate('/projects')} 
                 className="px-8 py-3 rounded-lg bg-[#E5791B] hover:bg-[#d46a1a] text-white font-semibold transition-colors duration-200"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Go back to home
+                Go back to projects
               </button>
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={modalOpen}
+        imageSrc={modalImage}
+        altText={modalAlt}
+        onClose={closeModal}
+      />
     </div>
   );
 }; 
