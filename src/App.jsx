@@ -18,9 +18,11 @@ import { Project7 } from './components/sections/project7';
 import { Project5 } from './components/sections/project5';
 import { Project8 } from './components/sections/project8';
 import { Project9 } from './components/sections/project9';
+import { Project11 } from './components/sections/project11';
 import { Contact } from './components/sections/contacts';
 import { New } from './components/sections/new.jsx';
 import { Locammend } from './components/sections/locammend.jsx';
+import ProjectNavigation from './components/ProjectNavigation';
 
 // Layout component for the main page
 const MainLayout = () => {
@@ -39,6 +41,7 @@ const MainLayout = () => {
 const ProjectLayout = ({ children }) => {
   return (
     <>
+      <ProjectNavigation />
       {children}
     </>
   );
@@ -112,6 +115,11 @@ function App() {
           <Route path="/locammend" element={
             <ProjectLayout>
               <Locammend />
+            </ProjectLayout>
+          } />
+          <Route path="/project11" element={
+            <ProjectLayout>
+              <Project11 />
             </ProjectLayout>
           } />
           

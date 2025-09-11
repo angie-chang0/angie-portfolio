@@ -58,10 +58,6 @@ export const Project1 = () => {
         />
       </div>
       {/* Navigation Buttons */}
-      <div className="flex w-full justify-between items-center mb-8 mt-4 px-5 md:px-12 max-w-7xl mx-auto">
-        <button onClick={() => navigate('/project2')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">previous</button>
-        <button onClick={() => navigate('/project3')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">next</button>
-      </div>
 
       {/* Main Content - centered, wide, not full-bleed */}
       <div className="w-full max-w-7xl mx-auto px-5 md:px-12 mt-10 md:mt-16 mb-[18px]">
@@ -87,7 +83,7 @@ export const Project1 = () => {
         <div className="mt-15 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6  rounded-4xl p-6 bg-transparent w-full text-center items-center justify-center">
           {/* Roles */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 mt-6 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Roles</div>
+            <div className="text-[#2563eb] font-bold text-xl mb-2 mt-6 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Roles</div>
             <ul className="list-none text-[#222] mb-4 pl-0 text-left" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">UX Designer</li>
               <li className="mb-3">Technical Lead</li>
@@ -97,7 +93,7 @@ export const Project1 = () => {
           </div>
           {/* Team */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Mentors</div>
+            <div className="text-[#2563eb] font-bold text-xl mb-2 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Mentors</div>
             <ul className="list-none text-[#222] mb-4 pl-0 text-left 
             " style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">Cody Panella</li>
@@ -106,14 +102,14 @@ export const Project1 = () => {
           </div>
           {/* Tools */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Tools</div>
+            <div className="text-[#2563eb] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Tools</div>
             <ul className="list-none text-[#222] pl-0 text-left mb-6" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">Figma, React</li>
             </ul>
           </div>
           {/* Methods */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Methods</div>
+            <div className="text-[#2563eb] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Methods</div>
             <ul className="list-none text-[#222] pl-0 text-left mb-6" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
             <li className="mb-3">Generative Research, Contextual Inquiry</li>
             <li className="mb-3">Wireframing, Prototyping, Front-end Development</li>
@@ -123,9 +119,9 @@ export const Project1 = () => {
 
         {/* Background Section */}
         <RevealOnScroll>
-          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e8ccb0]" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
+          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e6f0ff]" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
             {/* Phase Number */}
-            <div className="text-[#E5791B] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <div className="text-[#2563eb] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Background
             </div>
             {/* Heading */}
@@ -177,7 +173,7 @@ export const Project1 = () => {
         <RevealOnScroll>
           <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#f6f6f6] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
             {/* Phase Number */}
-            <div className="text-[#E5791B] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <div className="text-[#2563eb] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Research
             </div>
             {/* Heading */}
@@ -246,9 +242,9 @@ export const Project1 = () => {
 
         {/* Final Designs Section */}
         <RevealOnScroll>
-          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e8ccb0] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
+          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e6f0ff] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
             {/* Phase Number */}
-            <div className="text-[#E5791B] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <div className="text-[#2563eb] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Final Designs
             </div>
             {/* Heading */}
@@ -289,7 +285,7 @@ export const Project1 = () => {
         <RevealOnScroll>
           <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#f6f6f6] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
             {/* Phase Number */}
-            <div className="text-[#E5791B] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <div className="text-[#2563eb] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Development
             </div>
             {/* Heading */}
@@ -316,9 +312,9 @@ export const Project1 = () => {
 
         {/* Reflection Section */}
         <RevealOnScroll>
-          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e8ccb0] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
+          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-12 py-12 flex flex-col items-center bg-[#e6f0ff] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
             {/* Phase Number */}
-            <div className="text-[#E5791B] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <div className="text-[#2563eb] text-lg md:text-xl font-bold mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Reflection
             </div>
             {/* Heading */}
@@ -348,13 +344,6 @@ export const Project1 = () => {
         <div className="w-full bg-[#f6f6f6] border-t border-[#e0e0e0] mt-20">
           <div className="w-full max-w-7xl mx-auto px-5 md:px-12 py-12">
             <div className="flex flex-col items-center">
-              <button 
-                onClick={() => navigate('/')} 
-                className="px-8 py-3 rounded-lg bg-[#E5791B] hover:bg-[#d46a1a] text-white font-semibold transition-colors duration-200"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                Go back to home
-              </button>
             </div>
           </div>
         </div>

@@ -7,16 +7,30 @@ export const Project7 = () => {
 
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+    
+    // Immediate scroll
+    scrollToTop();
+    
+    // Delayed scroll to ensure it works after all content loads
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToTop();
+      });
+    });
+    
+    // Additional safety scroll after a short delay
+    setTimeout(scrollToTop, 100);
   }, []);
 
   return (
     <div className="py-25 min-h-screen flex flex-col items-center bg-[rgb(216,218,215)] text-black p-4">
       {/* Navigation Buttons */}
-      <div className="flex w-full justify-between items-center mb-8">
-        <button onClick={() => navigate('/project6')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">Back</button>
-        <button onClick={() => navigate('/project8')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">Next</button>
-      </div>
+    
       <div className="max-w-6xl w-full">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b-4 border-[rgb(105,193,111)]">
@@ -290,12 +304,6 @@ export const Project7 = () => {
         
         </div>
         <div className="flex justify-center mt-10">
-        <button
-          onClick={() => navigate('/')}
-          className="bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition"
-        >
-          Go Back
-        </button>
         </div>
       </div>
     </div>

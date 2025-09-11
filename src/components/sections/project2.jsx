@@ -82,11 +82,6 @@ export const Project2 = () => {
           style={{ maxHeight: '400px', minHeight: '220px', imageRendering: 'auto' }}
         />
       </div>
-      {/* Navigation Buttons */}
-      <div className="flex w-full justify-between items-center mb-8 mt-4 px-5 md:px-12 max-w-7xl mx-auto">
-        <button onClick={() => navigate('/angie-portfolio/locammend')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">previous</button>
-        <button onClick={() => navigate('/project1')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">next</button>
-      </div>
 
       {/* Main Content - centered, wide, not full-bleed */}
       <div className="w-full max-w-7xl mx-auto px-5 md:px-12 mt-10 md:mt-16 mb-[18px]">
@@ -114,7 +109,7 @@ export const Project2 = () => {
         <div className="mt-15 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 rounded-4xl p-6 bg-transparent w-full text-center items-center justify-center">
           {/* Roles */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 mt-6 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Roles</div>
+            <div className="text-[#16a34a] font-bold text-xl mb-2 mt-6 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Roles</div>
             <ul className="list-none text-[#222] mb-4 pl-0 text-left" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">UX/UI Designer</li>
               <li className="mb-3">Developer</li>
@@ -123,14 +118,14 @@ export const Project2 = () => {
           </div>
           {/* Team */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Team</div>
+            <div className="text-[#16a34a] font-bold text-xl mb-2 text-left" style={{ fontFamily: 'Courier New, monospace' }}>Team</div>
             <ul className="list-none text-[#222] mb-4 pl-0 text-left" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">Alan, Raymond, and Andrew (last names withold for privacy)</li>
             </ul>
           </div>
           {/* Tools */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Tools</div>
+            <div className="text-[#16a34a] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Tools</div>
             <ul className="list-none text-[#222] pl-0 text-left mb-6" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">React, Node.js, Express, MongoDB</li>
               <li className="mb-3">Figma, HTML, CSS, JavaScript</li>
@@ -139,7 +134,7 @@ export const Project2 = () => {
           </div>
           {/* Methods */}
           <div className="text-center">
-            <div className="text-[#E5791B] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Methods</div>
+            <div className="text-[#16a34a] font-bold text-xl mb-2 text-left mt-2" style={{ fontFamily: 'Courier New, monospace' }}>Methods</div>
             <ul className="list-none text-[#222] pl-0 text-left mb-6" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
               <li className="mb-3">User Research, Wireframing, Prototyping</li>
               <li className="mb-3">Agile Development, Testing, Deployment</li>
@@ -216,6 +211,14 @@ export const Project2 = () => {
             </div>
           </div>
         </RevealOnScroll>
+        
+        {/* Footer Section */}
+        <div className="w-full bg-[#f6f6f6] border-t border-[#e0e0e0] mt-20">
+          <div className="w-full max-w-7xl mx-auto px-5 md:px-12 py-12">
+            <div className="flex flex-col items-center">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

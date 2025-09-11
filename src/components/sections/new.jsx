@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import ScrollFloat from './ScrollFloat';
 
 export const New = () => {
   return (
@@ -9,6 +10,20 @@ export const New = () => {
       <span className="hidden md:block absolute left-[-90px] top-1/3 text-[300px] text-blue-800/20 blur-md select-none">✭</span>
       
       <RevealOnScroll>
+        {/* About Me Title */}
+        <div className="w-full mb-12">
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=60%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textClassName="text-black"
+          >
+            About Me
+          </ScrollFloat>
+        </div>
+        
         <div className="w-full max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start relative">
           
           {/* Left Section (Image & Text) - Shows second on mobile, first on desktop */}

@@ -1,0 +1,22 @@
+
+.scroll-float {
+    overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .scroll-float-text {
+    display: inline-block;
+    font-size: clamp(1.2rem, 5vw, 6rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+    will-change: transform;
+  }
+  
+  .char {
+    display: inline-block;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }

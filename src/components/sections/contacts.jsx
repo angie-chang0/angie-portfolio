@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import ScrollFloat from './ScrollFloat';
 import emailjs from "emailjs-com";
 
 export const Contact = () => {
   const [kImage, kCatImage] = useState("/angie-portfolio/k.png"); // Initialize state
   const [fImage, fCatImage] = useState("/angie-portfolio/k3.png"); 
+  const [isVisible, setIsVisible] = useState(false);
   const VITE_SERVICE_ID = "service_vmh40gb";
   const VITE_TEMPLATE_ID = "template_tpal5db";
   const VITE_PUBLIC_KEY = "r4SU9sVaZS2P6UDvE";
@@ -13,6 +15,15 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+
+  // Fallback mechanism to ensure content is visible on mobile
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500); // Show content after 500ms as fallback
+
+    return () => clearTimeout(timer);
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -35,6 +46,19 @@ export const Contact = () => {
       className="min-h-screen flex items-center justify-center py-20 bg-[rgb(216,218,215)]"
     >
       <RevealOnScroll>
+      <div className={` items-center justify-center w-full max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 transition-opacity duration-300 ${isVisible ? 'opacity-100' : ''}`}>
+          <div className="mb-4 text-center">
+            <ScrollFloat
+              animationDuration={1}
+              ease='back.inOut(2)'
+              scrollStart='center bottom+=60%'
+              scrollEnd='bottom bottom-=40%'
+              stagger={0.03}
+              textClassName="text-black"
+            >
+              Get In Touch!
+            </ScrollFloat>
+      </div>
 
           <div className="absolute top-[-40px] left-[-250px]">
             <img 
@@ -47,9 +71,6 @@ export const Contact = () => {
           </div>
 
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
-          <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
-            Get In Touch
-          </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <input
@@ -130,6 +151,7 @@ export const Contact = () => {
           </div>
           <p className="text-xs text-blue-900 mt-2"> +*:ꔫ:*﹤Built from scratch w/ React and Vite! Last updated July 12th, 2025 ﹥*:ꔫ:*+ﾟ</p>
         </footer>
+        </div>
       </RevealOnScroll>
     </section>
   );

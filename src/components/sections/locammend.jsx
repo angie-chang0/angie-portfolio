@@ -162,11 +162,7 @@ export const Locammend = () => {
           onClick={() => openModal("/angie-portfolio/locaheader.png", "Locammend Header")}
         />
       </div>
-      {/* Navigation Buttons */}
-      <div className="flex w-full justify-between items-center mb-8 mt-4 px-5 md:px-12 max-w-7xl mx-auto">
-        <button onClick={() => navigate('/project1')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">previous</button>
-        <button onClick={() => navigate('/project2')} className="px-6 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold">next</button>
-      </div>
+
 
       {/* Main Content - centered, wide, not full-bleed */}
       <div className="w-full max-w-7xl mx-auto px-5 md:px-12 mt-10 md:mt-16 mb-[18px]">
@@ -333,6 +329,52 @@ export const Locammend = () => {
             </div>
           </section>
         </RevealOnScroll>
+        {/* Exploratory Research Section */}
+        <RevealOnScroll>
+          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-19 pt-19 pb-8 flex flex-col items-center bg-[#f6f6f6] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-normal mb-4 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+              Exploratory Research
+            </h2>
+            {/* Image */}
+            <div className="w-full max-w-7xl mb-6">
+              <img
+                src="/angie-portfolio/users.png"
+                alt="Exploratory research users"
+                className="w-full rounded-lg"
+              />
+            </div>
+            {/* Paragraph */}
+            <div className="w-full max-w-5xl">
+              <p className="text-base md:text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                The idea for our app originated from our founder’s personal struggles when moving to a new city and facing the challenge of finding trusted, high-quality service providers. From doctors to mechanics to realtors, the process was often fragmented, unreliable, and overly dependent on anonymous online reviews. This experience sparked the realization that many others face the same problem; the lack of a simple, trustworthy way to access recommendations from people they actually know. Driven by this insight, we set out to create a solution that not only addressed this gap but also empowered communities to share and organize their most valuable referrals.
+              </p>
+            </div>
+          </section>
+        </RevealOnScroll>
+
+        {/* Exploratory Research: Need vs Engagement Split */}
+        <RevealOnScroll>
+          <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-19 py-10 flex flex-col items-center bg-[#f6f6f6]" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
+            <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              {/* Left: Graph */}
+              <div>
+                <img
+                  src="/angie-portfolio/graph.png"
+                  alt="Need vs Engagement Framework"
+                  className="w-full rounded-lg"
+                />
+              </div>
+              {/* Right: Paragraph */}
+              <div>
+                <p className="text-base md:text-lg leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  To understand the challenges and interests of potential consumers, our first step was to identify the types of end-users most likely to adopt our app and genuinely benefit from it. We mapped these groups on a need vs. engagement framework, which helped us cluster target users and clarify which features would be most critical for the MVP. Our focus centered on users with high need and medium-to-high engagement, particularly young professionals moving to new cities who require a trusted network to connect them with essential service providers, as well as movers of all kinds who are entering unfamiliar environments. We also highlighted potential power users who could become highly active referrers. This approach gave us a clear direction for where to begin collecting research and which data sources would provide the most actionable insights.
+                </p>
+              </div>
+            </div>
+          </section>
+        </RevealOnScroll>
+
         {/* RevealOnScroll: Identify Users Section */}
         <RevealOnScroll>
           <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-0 md:px-19 py-19 flex flex-col items-center bg-[#f6f6f6] mt-6" style={{left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw'}}>
@@ -930,13 +972,6 @@ contact visibility in the future.</li>
         <div className="w-full bg-[#f6f6f6] border-t border-[#e0e0e0] mt-20">
           <div className="w-full max-w-7xl mx-auto px-5 md:px-12 py-12">
             <div className="flex flex-col items-center">
-              <button 
-                onClick={() => navigate('/projects')} 
-                className="px-8 py-3 rounded-lg bg-[#E5791B] hover:bg-[#d46a1a] text-white font-semibold transition-colors duration-200"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                Go back to projects
-              </button>
             </div>
           </div>
         </div>

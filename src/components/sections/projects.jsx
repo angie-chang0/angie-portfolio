@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { RevealOnScroll } from "../RevealOnScroll";
+import ScrollFloat from './ScrollFloat';
 
 // Sample data array with all your projects
 const projectsData = [
   {
     id: "locammend",
     title: "Locammend",
-    description: "Locammend is an app built on a network of trusted referrals between individuals and that leads to trustworthy service providers. I was the founding product, design and development lead, and I worked with a team of 7 during my time at this startup.",
+    description: "A trusted referral network app connecting individuals with reliable service providers.",
     image: "/angie-portfolio/locaheader.png",
     tags: ["Professional Project", "Product", "UX/UI", "AI", "Database", "Coding"],
     buttonAction: "locammend",
   },
   {
+    id: "project11",
+    title: "Bakeoff",
+    description: "UX Design challenge to improve user metrics of a digital interactive display.",
+    image: "/angie-portfolio/line.gif",
+    tags: ["CMU", "UX/UI", "Coding"],
+    buttonAction: "project11",
+  },
+  {
     id: "recipeHub",
     title: "RecipeHub",
-    description:
-      "A WebApp that allows users to upload a link or picture to a recipe from anywhere on the web, and use our LLM to gather the recipe ingredients and instructions to save all in one place. Keeps track of user groceries and recommends recipes so that food does not go to waste.",
+    description: "A WebApp that uses LLM to extract and save recipe ingredients from web links or images.",
     image: "/angie-portfolio/recipiehub.png",
     tags: ["CMU","Product","AI", "UX/UI", "Database", "Coding"],
     buttonAction: "project2",
@@ -24,8 +32,7 @@ const projectsData = [
   {
     id: "activeIQ",
     title: "Active IQ Database",
-    description:
-      "Designed interface of Active IQ database with real-time changes in share ownership, managing traditional proxy solicitation and stockwatch firms, providing critical information based on latest SEC filings.",
+    description: "Designed interface for real-time share ownership database with SEC filing integration.",
     image: "/angie-portfolio/nq.png",
     tags: ["Professional Project", "UX/UI", "Coding", "Database"],
     buttonAction: "project1",
@@ -33,8 +40,7 @@ const projectsData = [
   {
     id: "myNewProject5",
     title: "Generative Art with p5.js",
-    description:
-        "Considering elements such as symmetry, rhythm, and pattern, I wrote code in P5.JS that could generate infinite variations of a tiled pattern; inspired by the work of MC Escher, I based my pattern off of an isometric cityscape. ",
+    description: "Created infinite tiled pattern variations inspired by MC Escher's isometric cityscapes.",
     image: "/angie-portfolio/iso3.png",
     tags: ["CMU","Creative" ,"Coding"],
     buttonAction: "project5", // internal link => setShowProject("project5")
@@ -42,8 +48,7 @@ const projectsData = [
   {
     id: "3d",
     title: "Brooklyn Bridge: VR",
-    description:
-        "  This is a project I made for a competition. I used the Brooklyn Bridge as my main subject and created a VR experience that takes place on the bridge in the 1920s. I had to model the bridge, the trolleys, and the people. I also had to create a train station and a train. The video shows the experience in action.",
+    description: "A VR experience set on the Brooklyn Bridge in the 1920s with modeled bridge, trolleys, and people.",
     image: "/angie-portfolio/br.jpg",
     tags: ["Personal Project", "3D Modelling", "VR/AR", "Creative"],
     buttonAction: "project9", // internal link => setShowProject("project5")
@@ -51,8 +56,7 @@ const projectsData = [
   {
     id: "infrecursive",
     title: "infintely recursive tree",
-    description:
-        "Using priniples of recursion and perlin noise, I created 2 projects that generate infinitely. I created a tree that continues to grow forever, and a phyllotactic spiral that shrinks and contracts. ",
+    description: "Created infinitely growing trees and phyllotactic spirals using recursion and Perlin noise.",
     image: "/angie-portfolio/t2.png",
     tags: ["Personal Project", "Creative", "Coding"],
     buttonAction: "project8", 
@@ -60,7 +64,7 @@ const projectsData = [
   {
     id: "interactiveenv",
     title: "TouchDesigner: Interactive Environment",
-    description: "Using TouchDesigner, I created a physics simluator that allows a user to manipulate a water like substance. through the scope of this project, I created many smaller prototypes using compuer vision and motion capture. Take a peek! :)",
+    description: "Built a physics simulator for water manipulation using TouchDesigner with computer vision integration.",
     image: "/angie-portfolio/mq3.png",
     tags: ["Personal Project", "Creative", "Computer Vision", "Motion Capture","3D Modelling"],
     link: "project6",
@@ -68,7 +72,7 @@ const projectsData = [
   {
     id: "depthMap",
     title: "LLM Depth Map + Machine Learning",
-    description: "Contained in this project is mini projects that culminates in a final trained LLM created within COMFYUI that uses machine learning to detect the depth within a given image. Using this, I programmed a parallax effect within images for manipulation. ",
+    description: "Trained an LLM in COMFYUI to detect image depth and create parallax effects for manipulation.",
     image: "/angie-portfolio/hand.png",
     tags: ["Personal Project","AI", "Creative"],
     link: "project7",
@@ -76,8 +80,7 @@ const projectsData = [
   {
     id: "cmufinals",
     title: "CMU Finals Planner",
-    description:
-      "Scalable PDF scraper that takes CMU course finals and smoothly adds final to Google Calendar using regular expressions, PyPlumber, and JS scripting.",
+    description: "PDF scraper that automatically adds CMU course finals to Google Calendar using regex and PyPlumber.",
     image: "/angie-portfolio/cmufinals.png",
     tags: ["Personal Project", "Coding"],
     link: "https://angie-chang0.github.io/cmufinalsplanner/",
@@ -85,7 +88,7 @@ const projectsData = [
   {
     id: "clocks",
     title: "10 Clocks",
-    description: "Clocks! Clocks! In this creative project, I rapidly prototyped 10 clocks and redefined from traditional time-keeping. I implemented these clocks in P5.JS, and implemented several different algorithms to represent time passing.",
+    description: "Rapidly prototyped 10 creative clocks in P5.JS using various algorithms to represent time passing.",
     image: "/angie-portfolio/c.png",
     tags: ["Personal Project", "Creative","Coding"],
     buttonAction: "project4",
@@ -93,8 +96,7 @@ const projectsData = [
   {
     id: "csProjects",
     title: "Computer Systems Assorted Projects",
-    description:
-      "Cache: Built a cache sim in C that utilized an LRU policy to simulate the L3 cache. Malloc: Implemented a memory manager that dynamically allocates heap memory through the use of segregated lists and unbounded arrays. Shell: Implemented a Unix Shell that manages multiple processes, handles signal interruptions, and allows for I/O redirection.",
+    description: "Built cache simulator, memory manager, and Unix shell in C with process management and I/O redirection.",
     image: "/angie-portfolio/malloc.png",
     tags: ["CMU","Coding"],
     buttonAction: "project3",
@@ -107,7 +109,7 @@ const projectsData = [
     tags: ["AI", "Coding", "Creative"],
     buttonAction: "project2",
   },
-  // {
+
   //   id: "freelance",
   //   title: "Freelance Web Developer",
   //   description: "coming soon!",
@@ -119,8 +121,8 @@ const projectsData = [
 ];
 
 export const Projects = () => {
-  // State to hold multiple selected tags
-  const [activeTags, setActiveTags] = useState([]);
+  // State to hold the active filter category
+  const [activeFilter, setActiveFilter] = useState('all');
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -133,79 +135,44 @@ export const Projects = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Create a list of all unique tags for the dropdown
-  const allTags = Array.from(new Set(projectsData.flatMap((project) => project.tags)));
-
-  // Filter projects based on whether they include any of the selected tags
-  const filteredProjects = projectsData.filter((project) => {
-    if (activeTags.length === 0) return true;
-    return project.tags.some((tag) =>
-      activeTags.some((activeTag) => tag.toLowerCase() === activeTag.toLowerCase())
-    );
-  });
-
-  // Add a tag when selected from the dropdown (if it's not already selected)
-  const handleTagSelect = (e) => {
-    const selectedTag = e.target.value;
-    if (selectedTag && !activeTags.includes(selectedTag)) {
-      setActiveTags([...activeTags, selectedTag]);
-    }
-    // Reset dropdown to default
-    e.target.value = "";
+  // Define filter categories and their associated projects
+  const filterCategories = {
+    all: projectsData,
+    product: projectsData.filter(project => 
+      ['locammend', 'activeIQ', 'recipeHub', 'cmufinals', 'depthMap'].includes(project.id)
+    ),
+    'ux/ui': projectsData.filter(project => 
+      ['locammend', 'activeIQ', 'recipeHub'].includes(project.id)
+    ),
+    code: projectsData.filter(project => 
+      ['csProjects', 'depthMap', 'locammend', 'cmufinals', 'infrecursive', 'clocks'].includes(project.id)
+    ),
+    'creative code': projectsData.filter(project => 
+      ['myNewProject5', '3d', 'infrecursive', 'interactiveenv', 'depthMap', 'clocks', 'recipt', 'project11'].includes(project.id)
+    ),
+    art: [] // Empty array for "coming soon!"
   };
 
-  // Remove a tag from the selected list when the "x" is clicked
-  const removeTag = (tagToRemove) => {
-    setActiveTags(activeTags.filter((tag) => tag !== tagToRemove));
-  };
+  // Get filtered projects based on active filter
+  const filteredProjects = filterCategories[activeFilter] || [];
 
-  // Determine how to render the "View Project" link or button
-  const renderViewProject = (project) => {
+  // Determine the navigation action for a project
+  const getProjectAction = (project) => {
     // If 'link' starts with http => external URL
     if (project.link && (project.link.startsWith("http://") || project.link.startsWith("https://"))) {
-      return (
-        <a
-          href={project.link}
-          className="text-black hover:text-black/80 transition-colors my-4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project →
-        </a>
-      );
+      return () => window.open(project.link, '_blank', 'noopener,noreferrer');
     }
     // If 'link' is defined but not external => internal project route
     if (project.link) {
-      return (
-        <button
-          onClick={() => navigate(`/${project.link}`)}
-          className="text-black hover:text-black/80 transition-colors my-4"
-        >
-          View Project →
-        </button>
-      );
+      return () => navigate(`/${project.link}`);
     }
     // If no link but we have buttonAction => internal project route
     if (project.buttonAction) {
       // Special case for Locammend
       if (project.buttonAction === 'locammend') {
-        return (
-          <button
-            onClick={() => navigate('/locammend')}
-            className="text-black hover:text-black/80 transition-colors my-4"
-          >
-            View Project →
-          </button>
-        );
+        return () => navigate('/locammend');
       }
-      return (
-        <button
-          onClick={() => navigate(`/${project.buttonAction}`)}
-          className="text-black hover:text-black/80 transition-colors my-4"
-        >
-          View Project →
-        </button>
-      );
+      return () => navigate(`/${project.buttonAction}`);
     }
     // Otherwise, no link or buttonAction => no action
     return null;
@@ -214,74 +181,104 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center py-20 bg-[rgb(216,218,215)] overflow-x-hidden"
+      className="min-h-screen flex flex-col py-20 bg-[rgb(216,218,215)] overflow-x-hidden"
     >
       <RevealOnScroll>
         <div className={`w-full max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 transition-opacity duration-300 ${isVisible ? 'opacity-100' : ''}`}>
-          <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
-            Featured Projects
-          </h2>
-
-          {/* Tag Filtering Controls */}
-          <div className="mb-6 flex flex-col md:flex-row items-center justify-center gap-4 px-2">
-            {/* Display selected tags */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              {activeTags.map((tag, index) => (
-                <div key={index} className="flex items-center bg-black text-white py-1 px-3 rounded-full text-sm">
-                  {tag}
-                  <button onClick={() => removeTag(tag)} className="ml-1 text-white">
-                    x
-                  </button>
-                </div>
-              ))}
-            </div>
-            {/* Dropdown for tag selection */}
-            <select
-              onChange={handleTagSelect}
-              className="px-4 py-2 border border-black rounded text-black w-full max-w-xs"
+          <div className="mb-4">
+            <ScrollFloat
+              animationDuration={1}
+              ease='back.inOut(2)'
+              scrollStart='center bottom+=100%'
+              scrollEnd='bottom bottom-=40%'
+              stagger={0.03}
+              textClassName="text-black"
             >
-              <option value="">select tag(s)</option>
-              {allTags.map((tag, index) => (
-                <option key={index} value={tag} disabled={activeTags.includes(tag)}>
-                  {tag}
-                </option>
-              ))}
-            </select>
+              Featured Projects
+            </ScrollFloat>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="p-4 sm:p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-lg transition w-full"
+          {/* Filter Tabs */}
+          <div className="mb-12 flex flex-wrap gap-3 justify-start">
+            {[
+              { key: 'all', label: 'all projects' },
+              { key: 'product', label: 'Product' },
+              { key: 'ux/ui', label: 'UI + UX' },
+              { key: 'code', label: 'Code' },
+              { key: 'creative code', label: 'Creative' },
+              { key: 'art', label: 'Art' }
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveFilter(tab.key)}
+                className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-200 hover:shadow-lg hover:-translate-y-1 ${
+                  activeFilter === tab.key
+                    ? 'bg-gradient-to-r from-blue-200 to-gray-200 text-blue-900 border-1 border-blue-900'
+                    : 'bg-[rgb(216,218,215)] border-1 text-black border-black hover:bg-gray-100'
+                }`}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 sm:h-60 object-cover rounded-lg mb-4"
-                />
-                <h3 className="font-bold text-lg sm:text-xl text-black font-serif italic">
-                  {project.title}
-                </h3>
-                <p className="text-black mb-4 text-sm sm:text-base">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, key) => (
-                    <span
-                      key={key}
-                      className="bg-black text-white py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-black/80 transition"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-between items-center">
-                  {renderViewProject(project)}
-                </div>
-              </div>
+                {tab.label}
+              </button>
             ))}
           </div>
-          {filteredProjects.length === 0 && (
+
+                    {/* Projects Grid */}
+          <div className="space-y-6">
+            {activeFilter === 'art' ? (
+              <RevealOnScroll>
+                <div className="text-center py-12">
+                  <h3 className="text-2xl font-bold text-black font-serif italic">
+                    Coming soon!
+                  </h3>
+                </div>
+              </RevealOnScroll>
+            ) : (
+              (() => {
+                const rows = [];
+                for (let i = 0; i < filteredProjects.length; i += 2) {
+                  const rowProjects = filteredProjects.slice(i, i + 2);
+                  rows.push(
+                    <RevealOnScroll key={i}>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                        {rowProjects.map((project) => {
+                          const projectAction = getProjectAction(project);
+                          return (
+                            <div
+                              key={project.id}
+                              className={`p-4 sm:p-6 rounded-xl border border-black hover:-translate-y-1 hover:border-black hover:shadow-2xl transition-all duration-300 w-full ${projectAction ? 'cursor-pointer' : ''}`}
+                              onClick={projectAction}
+                            >
+                              <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-48 sm:h-60 object-cover rounded-lg mb-4"
+                              />
+                              <h3 className="font-bold text-lg sm:text-xl text-black font-serif italic">
+                                {project.title}
+                              </h3>
+                              <p className="text-black mb-4 text-sm sm:text-base">{project.description}</p>
+                              <div className="flex flex-wrap gap-2">
+                                {project.tags.map((tag, key) => (
+                                  <span
+                                    key={key}
+                                    className="border border-black text-black py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </RevealOnScroll>
+                  );
+                }
+                return rows;
+              })()
+            )}
+          </div>
+          {filteredProjects.length === 0 && activeFilter !== 'art' && (
             <p className="text-center text-black mt-8">
               No projects found matching your criteria.
             </p>

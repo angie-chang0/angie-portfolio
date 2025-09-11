@@ -1,5 +1,6 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { useState } from "react";
+import ScrollFloat from './ScrollFloat';
 
 export const About = () => {
   const technicalSkills = [
@@ -37,11 +38,18 @@ export const About = () => {
 
       
       <div className="max-w-6xl mx-auto w-full px-8 md:px-16 lg:px-24 relative z-10">
-        <RevealOnScroll>
-          <h2 className="text-3xl mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
+        <div className="mb-8">
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(1)'
+            scrollStart='center bottom+=60%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textClassName="text-black"
+          >
             Skills
-          </h2>
-        </RevealOnScroll>
+          </ScrollFloat>
+        </div>
 
         {/* Technical Skills Section */}
         <RevealOnScroll>
