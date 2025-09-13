@@ -125,13 +125,9 @@ export const Project1 = () => {
               Background
             </div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-normal mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <h2 className="text-3xl md:text-4xl font-normal mb-8 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Project Context
             </h2>
-            {/* Subheading */}
-            <p className="text-lg md:text-xl text-center mb-8 mt-4 max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Understanding the need for a centralized database solution in the financial services industry.
-            </p>
             
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 w-full max-w-6xl">
               <div className="max-w-2xl text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -177,13 +173,9 @@ export const Project1 = () => {
               Research
             </div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-normal mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <h2 className="text-3xl md:text-4xl font-normal mb-8 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Understanding User Needs
             </h2>
-            {/* Subheading */}
-            <p className="text-lg md:text-xl text-center mb-8 mt-4 max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Deep dive into the financial world and IR analyst workflows to inform design decisions.
-            </p>
 
             {/* First Paragraph - Full Width */}
             <div className="mb-10 w-full max-w-6xl">
@@ -248,13 +240,9 @@ export const Project1 = () => {
               Final Designs
             </div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-normal mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <h2 className="text-3xl md:text-4xl font-normal mb-8 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Iterative Design Process
             </h2>
-            {/* Subheading */}
-            <p className="text-lg md:text-xl text-center mb-8 mt-4 max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Refined interface designs based on mentor feedback and user requirements.
-            </p>
             
             {/* Description */}
             <div className="mb-10 w-full max-w-6xl">
@@ -289,13 +277,9 @@ export const Project1 = () => {
               Development
             </div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-normal mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <h2 className="text-3xl md:text-4xl font-normal mb-8 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               From Prototype to Production
             </h2>
-            {/* Subheading */}
-            <p className="text-lg md:text-xl text-center mb-8 mt-4 max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Iterative development process from low-fidelity prototypes to functional React implementation.
-            </p>
             
             <div className="w-full max-w-6xl">
               <p className="text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -318,13 +302,9 @@ export const Project1 = () => {
               Reflection
             </div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-normal mb-2 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
+            <h2 className="text-3xl md:text-4xl font-normal mb-8 text-center" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Courier New, monospace' }}>
               Professional Growth
             </h2>
-            {/* Subheading */}
-            <p className="text-lg md:text-xl text-center mb-8 mt-4 max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Lessons learned from my first professional UX/UI development experience.
-            </p>
             
             <div className="w-full max-w-6xl">
               <p className="text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
