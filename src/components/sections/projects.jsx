@@ -38,13 +38,29 @@ const projectsData = [
     buttonAction: "project1",
   },
   {
-    id: "myNewProject5",
-    title: "Generative Art with p5.js",
-    description: "Created infinite tiled pattern variations inspired by MC Escher's isometric cityscapes.",
-    image: "/angie-portfolio/iso3.png",
-    tags: ["CMU","Creative" ,"Coding"],
-    buttonAction: "project5", // internal link => setShowProject("project5")
+    id: "interactiveenv",
+    title: "TouchDesigner: Interactive Environment",
+    description: "Built a physics simulator for water manipulation using TouchDesigner with computer vision integration.",
+    image: "/angie-portfolio/mq3.png",
+    tags: ["Personal Project", "Creative", "Computer Vision", "Motion Capture","3D Modelling"],
+    link: "project6",
   },
+  // {
+  //   id: "depthMap",
+  //   title: "LLM Depth Map + Machine Learning",
+  //   description: "Trained an LLM in COMFYUI to detect image depth and create parallax effects for manipulation.",
+  //   image: "/angie-portfolio/hand.png",
+  //   tags: ["Personal Project","AI", "Creative"],
+  //   link: "project7",
+  // },
+  // {
+  //   id: "myNewProject5",
+  //   title: "Generative Art with p5.js",
+  //   description: "Created infinite tiled pattern variations inspired by MC Escher's isometric cityscapes.",
+  //   image: "/angie-portfolio/iso3.png",
+  //   tags: ["CMU","Creative" ,"Coding"],
+  //   buttonAction: "project5", // internal link => setShowProject("project5")
+  // },
   {
     id: "3d",
     title: "Brooklyn Bridge: VR",
@@ -61,22 +77,7 @@ const projectsData = [
     tags: ["Personal Project", "Creative", "Coding"],
     buttonAction: "project8", 
   },
-  {
-    id: "interactiveenv",
-    title: "TouchDesigner: Interactive Environment",
-    description: "Built a physics simulator for water manipulation using TouchDesigner with computer vision integration.",
-    image: "/angie-portfolio/mq3.png",
-    tags: ["Personal Project", "Creative", "Computer Vision", "Motion Capture","3D Modelling"],
-    link: "project6",
-  },
-  {
-    id: "depthMap",
-    title: "LLM Depth Map + Machine Learning",
-    description: "Trained an LLM in COMFYUI to detect image depth and create parallax effects for manipulation.",
-    image: "/angie-portfolio/hand.png",
-    tags: ["Personal Project","AI", "Creative"],
-    link: "project7",
-  },
+
   {
     id: "cmufinals",
     title: "CMU Finals Planner",
@@ -85,14 +86,14 @@ const projectsData = [
     tags: ["Personal Project", "Coding"],
     link: "https://angie-chang0.github.io/cmufinalsplanner/",
   },
-  {
-    id: "clocks",
-    title: "10 Clocks",
-    description: "Rapidly prototyped 10 creative clocks in P5.JS using various algorithms to represent time passing.",
-    image: "/angie-portfolio/c.png",
-    tags: ["Personal Project", "Creative","Coding"],
-    buttonAction: "project4",
-  },
+  // {
+  //   id: "clocks",
+  //   title: "10 Clocks",
+  //   description: "Rapidly prototyped 10 creative clocks in P5.JS using various algorithms to represent time passing.",
+  //   image: "/angie-portfolio/c.png",
+  //   tags: ["Personal Project", "Creative","Coding"],
+  //   buttonAction: "project4",
+  // },
   {
     id: "csProjects",
     title: "Computer Systems Assorted Projects",

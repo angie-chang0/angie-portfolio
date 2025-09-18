@@ -149,7 +149,7 @@ export const Contact = () => {
               Resume↗
             </a>
           </div>
-          <p className="text-xs text-blue-900 mt-2"> +*:ꔫ:*﹤Built from scratch w/ React and Vite! Last updated July 12th, 2025 ﹥*:ꔫ:*+ﾟ</p>
+          <p className="text-xs text-blue-900 mt-2"> +*:ꔫ:*﹤Built from scratch w/ React and Vite! Last updated Sep 11th, 2025 ﹥*:ꔫ:*+ﾟ</p>
         </footer>
         </div>
       </RevealOnScroll>
