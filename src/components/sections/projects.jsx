@@ -61,14 +61,14 @@ const projectsData = [
   //   tags: ["CMU","Creative" ,"Coding"],
   //   buttonAction: "project5", // internal link => setShowProject("project5")
   // },
-  {
-    id: "3d",
-    title: "Brooklyn Bridge: VR",
-    description: "A VR experience set on the Brooklyn Bridge in the 1920s with modeled bridge, trolleys, and people.",
-    image: "/angie-portfolio/br.jpg",
-    tags: ["Personal Project", "3D Modelling", "VR/AR", "Creative"],
-    buttonAction: "project9", // internal link => setShowProject("project5")
-  },
+  // {
+  //   id: "3d",
+  //   title: "Brooklyn Bridge: VR",
+  //   description: "A VR experience set on the Brooklyn Bridge in the 1920s with modeled bridge, trolleys, and people.",
+  //   image: "/angie-portfolio/br.jpg",
+  //   tags: ["Personal Project", "3D Modelling", "VR/AR", "Creative"],
+  //   buttonAction: "project9", // internal link => setShowProject("project5")
+  // },
   {
     id: "infrecursive",
     title: "infintely recursive tree",
